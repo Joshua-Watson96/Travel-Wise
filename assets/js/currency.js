@@ -29,7 +29,7 @@ var symbol = "USD";
 var base = "EUR";
 
 /* selecting currency data id div block from destination.html page */
-var currencyEl = $("#currency-data");
+var currencyEl = $(".currency-container");
 /* creating the div block to display exchange rate */
 var exchangeRateEl = $('<div>');
 
@@ -40,10 +40,10 @@ function renderCurrencyData(data) {
 
     const jsonString = data;
     const jsonData = JSON.parse(jsonString);
-    console.log(jsonData);
+    // console.log(jsonData); // TODO: delete this before project submission
     var rates = jsonData.rates.USD;
-    console.log(rates);
-    console.log(data);
+    // console.log(rates); // TODO: delete this before project submission
+    // console.log(data); // TODO: delete this before project submission
     const text = `1 ${base} = ${rates} ${symbol}`;
     exchangeRateEl.text(text);
     exchangeRateEl.attr('id', 'exchange-rate');
