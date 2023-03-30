@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">    <link rel="stylesheet" href="./assets/css/destination.css"/>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/currency.css"/>
     <title>Travel Wise</title>
 </head>
 <body>
+
     <header>
-        <h1>Travel Wise</h1>
+        <!-- Website name -->
+        <h1 class="website-name">Travel Wise</h1>
     </header>
     
-    <div id ="destination-name" >
+    <div class="destination-container">
+        <div>
+            <div class="destination-name-container"> 
+                <!-- TODO: to get the destination from the selected -->
+                <h2 class="destination-name"> New York City </h2>
+            </div>         
         </div>
         
         <div>
@@ -26,14 +34,15 @@
 
 
         <!-- Currency data block -->
-        <div class="currency-card" id="currency-data">
+        <div class="currency-block currency-card" id="currency-data">
             <div class="currency-container">
                 <h3> Currency </h3>
             </div>
         </div>
         
         <!-- Weather data block -->
-        <div id="weather"> 
+        <div class="weather-block weather-cards" id="weather-data">
+            <div id="weather-container"></div> 
         </div>
         
         <!-- Recommendation data block -->
@@ -42,14 +51,13 @@
 
         <button class="bucketlist-btn"></button>
     </div>
-    
-    <script src="./assets/weather.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/weather.js"></script>
     <script src="./assets/js/currency.js"></script>
     <script src="./assets/js/get-recommendations-yelp.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH5bgQ0q5gpZVB80W4Cv5y6PsKpDlpqYk&libraries=places">
-</script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH5bgQ0q5gpZVB80W4Cv5y6PsKpDlpqYk&libraries=places"></script>
    
 </body>
 </html>

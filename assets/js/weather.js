@@ -1,26 +1,32 @@
 
-var cityInput = document.getElementById("city-search");
-var searchForm = document.getElementById("user-form");
+// var cityInput = document.getElementById("city-search");
+// var searchForm = document.getElementById("user-form");
 
-var searchSubmit = function (event) {
-    event.preventDefault();
-    var city = cityInput.value.trim();
-    if (city) {
-      getCoords(city);
-    } else {
-      alert("Please enter a City");
-    }
-  };
-  
-  var getCoords = function (city) {
-    var geoUrl =
+// var searchSubmit = function (event) {
+//     event.preventDefault();
+//     var city = cityInput.value.trim();
+//     if (city) {
+//       getCoords(city);
+//     } else {
+//       alert("Please enter a City");
+//     }
+//   };
+
+var city = "New York";
+
+// console.log(city); // TODO: delete this before submitting
+
+/* to get the latitude and longtitude of the city  */
+var getCoords = function (city) {
+  var geoUrl =
       "http://api.openweathermap.org/geo/1.0/direct?q=" +
       city +
       "&limit=5&appid=998c310a82d62a4fbd406adc6cf4d96f";
-  
+
+  // console.log("GeoURL: " + geoUrl); // TODO: delete this before submitting
     fetch(geoUrl)
       .then(function (response) {
-        console.log(response);
+        // console.log(response); // TODO: delete this before submitting
         if (response.ok) {
           response.json().then(function (data) {
             var latitude = data[0].lat;
@@ -35,7 +41,10 @@ var searchSubmit = function (event) {
         alert("Unable to connect to Open Weather");
       });
   };
-  
+
+getCoords(city);
+
+  /* getForecast will use the coordinates from the getCoord function */
   var getForecast = function (latitude, longitude) {
     var weatherUrl =
       "http://api.openweathermap.org/data/2.5/forecast?lat=" +
@@ -47,7 +56,7 @@ var searchSubmit = function (event) {
       .then(function (response) {
         if (response.ok) {
           response.json().then(function (data) {
-              console.log(data)
+              // console.log(data) // TODO: delete this before submitting
               let forecastArray = []
           for (let i = 0; i < data.list.length; i++) {
               var forecastObject = data.list[i];
@@ -69,27 +78,42 @@ var searchSubmit = function (event) {
       });
   };
   
+  /* to render the weather forecast on the destinations.html page */
   var displayForecast = function(array) {
-    document.getElementById("weather").textContent=" "
-      array.forEach(function(day){
-        var cardDiv = document.createElement("div");
-        var cardH4 = document.createElement("h3");
-        var tempH4 = document.createElement("h4");
-        var humidityH4 = document.createElement("h4");
-        var windH4 = document.createElement("h4");
-        var imageEl = document.createElement("img")
-        var dateArr = day.dt_txt.split(" ")[0].split("-");
-        var date = dateArr[2] + "/" + dateArr[1];
-        imageEl.src = "https://openweathermap.org/img/wn/"+ day.weather[0].icon + "@2x.png"
-        cardH4.textContent = date;
-        tempH4.textContent = "Temperature: " + day.main.temp + "°C";
-        humidityH4.textContent = "Humidity: " + day.main.humidity + "%";
-        windH4.textContent = "Wind: " + day.wind.speed + "km/h";
-        cardDiv.append(cardH4,imageEl, tempH4, humidityH4, windH4);
-        document.getElementById("weather").appendChild(cardDiv);
-      })  
+    var weatherContainerEl = document.getElementById('weather-container');
+    array.forEach(function(day){
+
+      /* create weather card element which will contain weather info for each day */
+      weatherCardEl = document.createElement("div");
+      weatherCardEl.setAttribute("id", "weather-card");
+
+      /* date element */
+      var dateEl = document.createElement("h3");
+      /* weather data element */
+      var temperatureEl = document.createElement("p");
+      var humidityEl = document.createElement("p");
+      var windEl = document.createElement("p");
+      var imageEl = document.createElement("img");
+
+      /* rendering the date on html */
+      var dateArr = day.dt_txt.split(" ")[0].split("-");
+      var date = dateArr[2] + "/" + dateArr[1];
+      dateEl.textContent = "Date: " + date;
+
+      /* weather image */
+      imageEl.src = "https://openweathermap.org/img/wn/"+ day.weather[0].icon + "@2x.png"
+        
+      /* rendering weather data on html */
+      temperatureEl.textContent = "Temperature: " + day.main.temp + "°C";
+      humidityEl.textContent = "Humidity: " + day.main.humidity + "%";
+      windEl.textContent = "Wind: " + day.wind.speed + "km/h";
+
+      /* appending newly created element into weather container */
+      weatherCardEl.append(dateEl, imageEl, temperatureEl, humidityEl, windEl);
+      weatherContainerEl.appendChild(weatherCardEl);
+    })  
   }
   
   
- searchForm.addEventListener("submit", searchSubmit);
+//  searchForm.addEventListener("submit", searchSubmit);
   
