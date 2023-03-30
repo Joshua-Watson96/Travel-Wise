@@ -14,7 +14,6 @@
     </header>
     
     <div class="container">
-        <!--TODO: get from api -->
         <div>
             <h2 class="destination-name"></h2>
             <p class="local-time"></p>
@@ -33,15 +32,21 @@
                 <h3> Currency </h3>
             </div>
         </div>
-
-        <div class="weather"></div>
+        
+        <!-- Weather data block -->
+        <div id="weather"> 
+        </div>
+        
+        <!-- Recommendation data block -->
         <div id = "businesses">
-            
         </div>
         <button class="bucketlist-btn"></button>
-    <div>
+    </div>
+    
+    <script src="./assets/weather.js"></script>
+    <script src="./assets/js/currency.js"></script>
     <script src="./assets/js/get-recommendations-yelp.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./assets/js/currency.js"></script>
+   
 </body>
 </html>
