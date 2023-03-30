@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css" />  
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Travel Wise</title>
 </head>
 <body>
@@ -13,16 +14,19 @@
     </header>
     
     <div class="container">
-        <form autocomplete="off" action="/action_page.php">
-            <div class="autocomplete" style="width:300px;">
-              <input id="myInput" type="text" name="myCountry" placeholder="Country">
-            </div>
-            <input type="submit">
-        </form>
+        <div class="ui-widget">
+            <label for="myCity">City: </label>
+            <input id="myCity">
+            <button id="submit" type="button">Submit</button>
+            <!-- <input id="submit" type="button"> -->
+        </div>
+    </div>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-<script src="./assets/js/get-countries.js"></script>
+<script src="./assets/js/cities.js"></script>
+
 
 </body>
 </html>
