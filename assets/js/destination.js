@@ -1,4 +1,4 @@
-var requestURL = 
+
 
 
 fetch("https://maps.googleapis.com/maps/api/place/textsearch/json?query=New+York+City&key=AIzaSyDH5bgQ0q5gpZVB80W4Cv5y6PsKpDlpqYk")
