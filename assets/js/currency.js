@@ -37,8 +37,14 @@ var exchangeRateEl = $('<div>');
 // from the response result, retrieve the rate
 // then render the rate on html page
 function renderCurrencyData(data) {
+
+    const jsonString = data;
+    const jsonData = JSON.parse(jsonString);
+    console.log(jsonData);
+    var rates = jsonData.rates.USD;
+    console.log(rates);
     console.log(data);
-    const text = data.rates;
+    const text = `1 ${base} = ${rates} ${symbol}`;
     exchangeRateEl.text(text);
     exchangeRateEl.attr('id', 'exchange-rate');
     currencyEl.append(exchangeRateEl);
