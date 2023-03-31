@@ -91,6 +91,7 @@ localStorage.setItem("group6-travel-app-selected-city", "");
 
 // Add click event to button
 cityButton.addEventListener("click", function(event) {
+  console.log(cityTextbox.value)
   localStorage.setItem("group6-travel-app-selected-city", cityTextbox.value);
   window.location.href = 'destinations.html'
 });
