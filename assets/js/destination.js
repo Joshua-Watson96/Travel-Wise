@@ -10,10 +10,10 @@ async function initMap() {
   
   // Add a marker to the map
   var marker = new google.maps.Marker({
-    position: {lat: city , lng: city },
+    position: {lat: 37.7749, lng: -122.4194},
     map: myMap,
     marker: marker,
-    title: city,
+    title: 'San Francisco',
   });
 }
 
