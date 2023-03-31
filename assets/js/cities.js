@@ -75,14 +75,15 @@ $( function() {
     'Yangon',
     'Alexandria',
     'Jinan',
-    'Guadalajara'
+    'Guadalajara',
+    'Marrakech'
   ];
   $( "#myCity" ).autocomplete({
     source: cities
   });
 } );
 
-
+//save the country selected bya user to local storage
 var cityButton = document.getElementById("submit");
 var cityTextbox = document.getElementById("myCity");
 
@@ -91,6 +92,22 @@ localStorage.setItem("group6-travel-app-selected-city", "");
 
 // Add click event to button
 cityButton.addEventListener("click", function(event) {
-  localStorage.setItem("group6-travel-app-selected-city", cityTextbox.value);
-  window.location.href = 'destinations.html'
+  if (cityTextbox.value != "") {
+    localStorage.setItem("group6-travel-app-selected-city", cityTextbox.value);
+    window.location.href = 'destinations.html'
+  }
+});
+
+
+//add click event to top 5 destinations images and save the name to local storage
+document.addEventListener("click", function(event) {
+ 
+  var element = event.target
+
+  if (element.matches("img") === true) {
+    var cityNamealt = element.getAttribute("alt");
+    var cityName = cityNamealt.replace("image of ", "");
+    localStorage.setItem("group6-travel-app-selected-city", cityName);
+  
+  }
 });
