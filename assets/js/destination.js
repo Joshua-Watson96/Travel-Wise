@@ -1,4 +1,6 @@
-
+/* to display the selected destination name on destinations.html page */
+var destinationNameEl = document.getElementById("destinated-city");
+destinationNameEl.innerHTML = localStorage.getItem("group6-travel-app-selected-city");
 
 
 fetch("https://maps.googleapis.com/maps/api/place/textsearch/json?query=New+York+City&key=AIzaSyDH5bgQ0q5gpZVB80W4Cv5y6PsKpDlpqYk")
