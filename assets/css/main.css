@@ -1,43 +1,226 @@
-
 :root {
-    --light:#D3F5F4;
-    --header: #554348;
-
+  --dark: #07434e;
+  --light: #769fa0;
+  --green: #d6cd28;
 }
 
 body {
-    background-color: var(--light);
-
-    flex: 1;
-    margin: auto 0;
-    height: 100vh;
-    overflow-y: scroll;
+  background-image: radial-gradient(var(--dark) 0.5px, whitesmoke.5px);
+  background-size: 10px 10px;
+  background-color: whitesmoke;
+  font-family: "Kanit", sans-serif;
+  flex: 1;
+  margin: auto 0;
+  height: 100vh;
+  overflow-y: scroll;
 }
 
-.container {
-    text-align: center
+.fa {
+  color: var(--green);
+}
+
+.fa-plus {
+  color: var(--dark);
+  font-size: larger;
+}
+
+/* TODO: fix sidebar - make text within hidden panel */
+.sidebar {
+  margin-top: 0.5em;
+  width: 0;
+  height: 9%;
+  background-color: whitesmoke;
+  border: 0.05em solid var(--dark);
+  transition: 1s ease;
+  position: fixed;
+  z-index: 1;
+  padding-top: 1.8em;
+}
+
+#bucket-link {
+  padding: 0;
+  margin: 0 2em 0 0;
+  color: var(--dark);
+  font-size: 1em;
+  transition: 1s ease;
+}
+
+.sidebar_large {
+  width: 30%;
+}
+
+#side-btn {
+  position: absolute;
+  border: none;
+  height: 60px;
+  width: 60px;
+  border: 0.4em solid var(--green);
+  border-radius: 50%;
+  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.3);
+  left: 100%;
+  top: 1rem;
+  transform: translateX(-50%);
+  cursor: pointer;
 }
 
 header {
-    display: flex;
-    justify-content: center;
-    background-color: var(--header);
-    color: whitesmoke;
-    width:100%;
-    text-align: center;
-    padding: 1em;
-    margin-bottom: 1em;
+  display: flex;
+  justify-content: center;
+  background-color: var(--dark);
+  color: whitesmoke;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  border-bottom: 0.25em solid var(--green);
+}
+
+.container {
+  text-align: center;
+}
+
+.submit-search {
+  background-color: var(--green);
+  margin: 2em 1.5em;
+  border: 0.06em solid var(--dark);
+  /* border-radius: 0.5em; */
+  padding: 1.5em;
+  box-shadow: 0px 0px 20px #888888;
+}
+
+#myInput {
+  width: 90%;
+  height: 3em;
+  margin-bottom: 0.5em;
+  font-size: 1em;
+  text-align: center;
+  border: 0.01em solid var(--dark);
+  border-radius: 2em;
+  font-family: "Kanit", sans-serif;
+  box-shadow: 1px 2px 10px #847f26;
+}
+
+#submit-btn {
+  background-color: var(--light);
+  padding: 0.3em 2em;
+  border: 0.05em solid var(--dark);
+  border-radius: 2em;
+  color: #053138;
+  font-family: "Kanit", sans-serif;
+  font-size: 1em;
+  box-shadow: 2px 3px 10px #847f26;
+}
+
+#submit-btn:hover {
+  background-color: var(--dark);
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+h2 {
+  color: var(--green);
+  background-color: var(--dark);
+  font-size: 2.3em;
+  padding: 0.1em;
 }
 
 .top-cities {
-    margin: 3em;
-    background-color: #8C9A9D;
-    border: 0.15em solid var(--header);
+  margin: 2em 0.3em;
+  background-color: var(--light);
+  padding-bottom: 0.2em;
+  box-shadow: 3px 3px 20px #888888;
+}
+
+.slide-arrow {
+  display: none;
+}
+
+.card {
+  position: relative;
+  margin: 2em auto;
+}
+
+.text-overlay {
+  position: absolute;
+  left: 6.5%;
+  margin-top: 8em;
+  background-color: var(--dark);
+  padding: 0.5em 1.9em;
+  color: whitesmoke;
+  border-radius: 0.5em;
+  border: 0.2em solid var(--green);
 }
 
 .city-img {
-    flex-wrap: wrap;
-    flex: 1 1 1em;
-    height: 10em;
-    width: 20em;
+  display: block;
+  height: 13em;
+  width: 90%;
+  margin: auto;
+  border: 0.3em solid var(--light);
+}
+
+.city-img:hover {
+  border: 0.3em solid var(--green);
+}
+
+footer {
+  background-color: var(--dark);
+  height: 3em;
+  text-align: center;
+  color: var(--light);
+}
+
+@media (min-width: 768px) {
+  .submit-search {
+    margin: auto;
+    width: 40%;
+  }
+
+  .city-cards {
+    position: relative;
+  }
+
+  .card {
+    width: 40em;
+  }
+
+  /* TODO: fix carousel*/
+  #prev-btn,
+  #next-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    width: auto;
+    margin-top: 1em;
+    padding: 0.6em;
+    background-color: whitesmoke;
+    color: var(--green);
+    font-size: 1.5em;
+    transition: 0.6s ease;
+    user-select: none;
+    border-radius: 50%;
+    border: 0.1em solid #053138;
+  }
+
+  #next-btn {
+    right: 2em;
+  }
+
+  #prev-btn {
+    left: 2em;
+  }
+
+  /* TODO: fix buttons on hover*/
+  #next-btn:hover {
+    background-color: var(--dark);
+    color: whitesmoke;
+    cursor: pointer;
+  }
+
+  #prev-btn:hover {
+    background-color: var(--dark);
+    color: whitesmoke;
+    cursor: pointer;
+  }
 }
