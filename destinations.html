@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">    <link rel="stylesheet" href="./assets/css/destination.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="./assets/css/destination.css"/>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/currency.css"/>
     
@@ -20,18 +21,20 @@
     
     <!-- All the main content that will be displayed on the destinations.html page is in this container -->
     <div class="destination-container">
+
         <!-- Name of the city -->
+
         <div>
+            <!-- div for the name of the city -->
             <div class="destination-name-container"> 
-                <!-- TODO: to get the destination from the selected -->
                 <h2 class="destination-name"> New York City </h2>
             </div> 
-            <div onload="initmap()">
-            <div id="map"></div>
-        </div>
-        <div>        
-        </div>
+            <!-- div for city map -->
+            <div class = "city-map" onload="initmap()">
+                <div id="map"></div>
+            </div>
         
+
         <!-- Images of the city -->
         <div>
             <img src="#">
@@ -45,6 +48,11 @@
 
 
         <!-- Currency data of the city -->
+
+        </div>
+
+        <!-- Currency data block -->
+
         <div class="currency-block currency-card" id="currency-data">
             <div class="currency-container">
                 <h3> Currency </h3>
@@ -56,9 +64,14 @@
             <div id="weather-container"></div> 
         </div>
         
+
         <!-- Top 10 Recommended places of the city  -->
         <div id = "businesses">
         </div>
+
+        <!-- Recommendation data block -->
+        <div id = "businesses"></div>
+
 
         <!-- <button class="bucketlist-btn"></button> -->
     </div>

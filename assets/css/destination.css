@@ -24,10 +24,20 @@ body {
 }
 
 #weather-container{
-    display: inline;
+    display: flex;
 }
 
 #map{
     height: 350px;
     width: 350px;
+}
+
+.city-map {
+    display: flex;
+    justify-content: center;
+}
+
+#currency-data {
+    display: flex;
+    justify-content: center;
 }
