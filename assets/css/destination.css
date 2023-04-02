@@ -26,3 +26,8 @@ body {
 #weather-container{
     display: inline;
 }
+
+#map{
+    height: 350px;
+    width: 350px;
+}

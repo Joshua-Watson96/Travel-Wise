@@ -61,3 +61,8 @@ fetch(queryURL, {
       businessContainer.appendChild(url);
     }
   });
+
+
+  //set the destination name title on the destinations.html
+  var destinationCity = document.querySelector(".destination-name");
+  destinationCity.textContent = city;
