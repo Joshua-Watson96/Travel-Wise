@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">    <link rel="stylesheet" href="./assets/css/destination.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="./assets/css/destination.css"/>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/currency.css"/>
     
@@ -19,25 +20,18 @@
     </header>
     
     <div class="destination-container">
+        <!-- div for the city name and map -->
         <div>
+            <!-- div for the name of the city -->
             <div class="destination-name-container"> 
-                <!-- TODO: to get the destination from the selected -->
                 <h2 class="destination-name"> New York City </h2>
             </div> 
-            <div onload="initmap()">
-            <div id="map"></div>
-        </div>
-        <div>        
-        </div>
+            <!-- div for city map -->
+            <div class = "city-map" onload="initmap()">
+                <div id="map"></div>
+            </div>
         
-        <div>
-            <img src="#">
         </div>
-        <div>
-            <p class="description">
-            </p>
-        </div>
-
 
         <!-- Currency data block -->
         <div class="currency-block currency-card" id="currency-data">
@@ -52,8 +46,7 @@
         </div>
         
         <!-- Recommendation data block -->
-        <div id = "businesses">
-        </div>
+        <div id = "businesses"></div>
 
         <button class="bucketlist-btn"></button>
     </div>
