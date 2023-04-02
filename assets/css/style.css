@@ -1,0 +1,25 @@
+#businesses {
+    border-color: gray;
+    border-style: solid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.businessCard {
+    border-style: solid;
+    cursor: pointer;
+    /* width: 25%; */
+    text-decoration: none;
+}
+
+.link-to-destination {
+    /* z-index: 1; */
+    border-color: black;
+    display: block;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
