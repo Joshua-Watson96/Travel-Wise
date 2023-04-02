@@ -1,25 +1,3 @@
-// /* Exchange rate from AUD to USD */
-// "apikey", "SlevtC27eE76f6urUpqiJisdHBEjYRXC"
-// /* API Key */
-// var apiKey = 'SlevtC27eE76f6urUpqiJisdHBEjYRXC';
-// /* Set endpoint and your access key */
-// var endpoint = 'latest';
-// /* Add url to fixer.io */
-// var fixerURL = 'https://data.fixer.io/api/';
-// /* Base Currency */
-// const baseCurrency = 'AUD';
-// /* Target Currency */
-// const targetCurrency = 'JPN';
-
-// fetch(`http://data.fixer.io/api/latest?access_key=${apiKey}&base=${baseCurrency}&symbol=${targetCurrency}`)
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data);
-//     // const rate = data.rates[targetCurrency];
-//     // console.log(`1 ${baseCurrency} = ${rate} ${targetCurrency}`);
-//   });
-
-
 // extra API key
 // sBkWGidcvvz1zCSDEmsTtV9vXxdD1Nvr
 // SlevtC27eE76f6urUpqiJisdHBEjYRXC
