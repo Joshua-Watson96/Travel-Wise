@@ -61,6 +61,13 @@ fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/`+ city)
     console.error(error);
   });
 
+  var backBtn = document.getElementById("goBack")
+
+  backBtn.addEventListener("click", function(event){
+    window.location.href="index.html"
+  
+  });
+
 
 
 
