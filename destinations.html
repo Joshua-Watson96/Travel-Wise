@@ -6,19 +6,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="./assets/css/destination.css"/>
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- <link rel="stylesheet" href="./assets/css/style.css" /> -->
     <link rel="stylesheet" href="./assets/css/currency.css"/>
-    
-
     <title>Travel Wise</title>
 </head>
 <body>
 
     <header>
         <!-- Website name -->
-        <h1 class="website-name">Travel Wise</h1>
+        <h1 class="website-name">
+            Travel Wise
+            <i class="fa fa-plane" aria-hidden="true"></i>
+        </h1>
     </header>
     
     <!-- All the main content that will be displayed on the destinations.html page is in this container -->
@@ -75,11 +85,28 @@
         </div>
 
         <!-- Recommendation data block -->
-        <div id = "businesses"></div>
+        <div id = "businesses">
+            <h3>As Recommended by Yelp</h3>
+        </div>
 
 
-        <button id="bucketlist-btn">Add to my Bucket List</button>
+        <button id="bucketlist-btn">
+            Add to my Bucket List
+            <i class="fa fa-plane" aria-hidden="true">
+        </button>
 
+    </div>
+
+    <div id="dialog-fail" title="Basic dialog">
+        <p>
+          The city already exist in your bucket list.
+        </p>
+    </div>
+
+    <div id="dialog-success" title="Basic dialog">
+        <p>
+          The city has been added to your bucket list.
+        </p>
     </div>
 
     <!-- linking javascript files to html -->
@@ -92,9 +119,10 @@
         (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
           key: "AIzaSyDGgCB_6d25AXbEuEeg4ieHGmMiWczwcoA",
           });
-      </script>
-      <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGgCB_6d25AXbEuEeg4ieHGmMiWczwcoA&callback=initMap"></script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGgCB_6d25AXbEuEeg4ieHGmMiWczwcoA&libraries=places"></script>
-      <script src="./assets/js/saved-destinations.js"></script>
+    </script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGgCB_6d25AXbEuEeg4ieHGmMiWczwcoA&callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGgCB_6d25AXbEuEeg4ieHGmMiWczwcoA&libraries=places"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </body>
 </html>
