@@ -4,8 +4,8 @@
 // QaMPdQvBv497O2H54foAV8WnMhQzurnJ
 
 /* the selected destination */
-var destination = localStorage.getItem("group6-travel-app-selected-city");
-console.log("The chosen destination: ", destination);
+var destinationC = localStorage.getItem("group6-travel-app-selected-city");
+console.log("The chosen destination: ", destinationC);
 
 /* variables that need to be used to fetch data from the server */
 var endpoint = "latest";
@@ -16,14 +16,16 @@ var base = "AUD";
  * fetching currency code of the selected city from the currency.json file 
  */
 fetch('../currencies.json')
-  .then(response => response.json())
+  .then(response => {
+    console.log(response);
+    return response.json()})
   .then(data => {
     console.log(typeof data);
-    symbol = data[destination];
+    symbol = data[destinationC]; // change the currency symbol based on the selected city
     console.log(data);
-    console.log(data[destination]);
-   // change the currency symbol based on the selected city
-
+    console.log(destinationC);
+    console.log(data[destinationC]);
+    
     // console.log("After fetching symbol from json file: ", symbol); // TODO: delete before submission
 
     /* selecting currency data id div block from destination.html page */
@@ -53,13 +55,14 @@ fetch('../currencies.json')
     var myHeaders = new Headers();
     myHeaders.append("apikey", "QaMPdQvBv497O2H54foAV8WnMhQzurnJ");
 
-    /* requesting data from the server */
+    /* request options */
     var requestOptions = {
       method: 'GET',
       redirect: 'follow',
       headers: myHeaders
     };
 
+    /* requesting data from the server */
     var url = `https://api.apilayer.com/fixer/${endpoint}?symbols=${symbol}&base=${base}`;
     console.log(url);
     console.log(symbol);
@@ -68,7 +71,7 @@ fetch('../currencies.json')
       .then(result => renderCurrencyData(result))
       .catch(error => console.log('error', error));
       
-    });
+  });
 
 // /* the selected destination */
 // var destination = localStorage.getItem("group6-travel-app-selected-city");
@@ -114,7 +117,7 @@ fetch('../currencies.json')
 
 //     /* headers that will be used in sending request to the server */
 //     var myHeaders = new Headers();
-//     myHeaders.append("apikey", "sBkWGidcvvz1zCSDEmsTtV9vXxdD1Nvr");
+//     myHeaders.append("apikey", "QaMPdQvBv497O2H54foAV8WnMhQzurnJ");
 
 //     /* requesting data from the server */
 //     var requestOptions = {
