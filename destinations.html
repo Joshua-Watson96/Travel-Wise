@@ -1,3 +1,5 @@
+<!-- This page will display the information about the selected destination -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,8 +32,10 @@
 
     </header>
     
+    <!-- All the main content that will be displayed on the destinations.html page is in this container -->
     <div class="destination-container">
-        <!-- div for the city name and map -->
+
+        <!-- Name of the city -->
         <div>
             <!-- div for the name of the city -->
             <div class="destination-name-container"> 
@@ -50,20 +54,41 @@
                 <div id="timeZone"></div>
             </div>
         
+
+        <!-- Map image of the city -->
+        <div>
+            <img src="#">
+        </div>
+
+        <!-- Short description of the city -->
+        <div>
+            <p class="description">
+            </p>
+        </div>
+
+
+        <!-- Currency data of the city -->
+
         </div>
 
         <!-- Currency data block -->
+
         <div class="currency-block currency-card" id="currency-data">
             <div class="currency-container">
                 <h3> Currency </h3>
             </div>
         </div>
         
-        <!-- Weather data block -->
+        <!-- Weather data of the city -->
         <div class="weather-block weather-cards" id="weather-data">
             <div id="weather-container"></div> 
         </div>
         
+
+        <!-- Top 10 Recommended places of the city  -->
+        <div id = "businesses">
+        </div>
+
         <!-- Recommendation data block -->
         <div id = "businesses">
             <h3>As Recommended by Yelp</h3>
@@ -89,6 +114,7 @@
         </p>
     </div>
 
+    <!-- linking javascript files to html -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/weather.js"></script>
     <script src="./assets/js/currency.js"></script>
