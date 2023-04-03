@@ -83,7 +83,7 @@ $( function() {
   });
 } );
 
-//save the country selected bya user to local storage
+//save the country selected by user to local storage
 var cityButton = document.getElementById("submit");
 var cityTextbox = document.getElementById("myCity");
 
@@ -98,7 +98,6 @@ cityButton.addEventListener("click", function(event) {
   }
 });
 
-
 //add click event to top 5 destinations images and save the name to local storage
 document.addEventListener("click", function(event) {
  
@@ -108,6 +107,6 @@ document.addEventListener("click", function(event) {
     var cityNamealt = element.getAttribute("alt");
     var cityName = cityNamealt.replace("image of ", "");
     localStorage.setItem("group6-travel-app-selected-city", cityName);
-  
+
   }
 });
