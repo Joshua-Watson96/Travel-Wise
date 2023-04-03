@@ -66,3 +66,35 @@ fetch(queryURL, {
   //set the destination name title on the destinations.html
   var destinationCity = document.querySelector(".destination-name");
   destinationCity.textContent = city;
+
+
+
+  //save to bucketlist
+
+  var addTolistBtn = document.querySelector(".bucketlist-btn");
+
+  addTolistBtn.addEventListener("click", function(event) {
+    console.log("add is clicked")
+
+    var bucketCities = [];
+    var citiesBucketlist =  JSON.parse(localStorage.getItem("group6-bucket-list-cities"));
+    var cityTosave = localStorage.getItem("group6-travel-app-selected-city")
+    if (citiesBucketlist !== null) {
+      bucketCities = citiesBucketlist;
+    }
+
+
+    console.log(bucketCities.includes(cityTosave))
+    if (bucketCities.includes(cityTosave) == true) {
+      alert("City already exists.")
+
+    } else {
+      bucketCities.push(cityTosave);
+      localStorage.setItem("group6-bucket-list-cities", JSON.stringify(bucketCities));
+    }
+
+    console.log("value", bucketCities)
+
+
+
+  });
