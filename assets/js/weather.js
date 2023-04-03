@@ -12,7 +12,7 @@
 //     }
 //   };
 
-var city = "New York";
+var city = localStorage.getItem("group6-travel-app-selected-city");
 
 // console.log(city); // TODO: delete this before submitting
 
@@ -89,6 +89,7 @@ getCoords(city);
 
       /* date element */
       var dateEl = document.createElement("h3");
+      dateEl.setAttribute("id", "date-header");
       /* weather data element */
       var temperatureEl = document.createElement("p");
       var humidityEl = document.createElement("p");
@@ -98,7 +99,7 @@ getCoords(city);
       /* rendering the date on html */
       var dateArr = day.dt_txt.split(" ")[0].split("-");
       var date = dateArr[2] + "/" + dateArr[1];
-      dateEl.textContent = "Date: " + date;
+      dateEl.textContent = date;
 
       /* weather image */
       imageEl.src = "https://openweathermap.org/img/wn/"+ day.weather[0].icon + "@2x.png"

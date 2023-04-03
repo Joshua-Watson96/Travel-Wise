@@ -92,12 +92,17 @@ header {
     flex-direction: column;
   }
 
-
+  footer {
+    background-color: var(--dark);
+    height: 3em;
+    text-align: center;
+    color: var(--light);
+  }
 
   @media (min-width: 768px) {
     .submit-search {
       margin: auto;
-      width: 50%;
+      width: 40%;
     }
   
   }

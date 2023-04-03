@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="./assets/css/destination.css"/>
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- <link rel="stylesheet" href="./assets/css/style.css" /> -->
     <link rel="stylesheet" href="./assets/css/currency.css"/>
     <title>Travel Wise</title>
 </head>
@@ -15,7 +23,10 @@
 
     <header>
         <!-- Website name -->
-        <h1 class="website-name">Travel Wise</h1>
+        <h1 class="website-name">
+            Travel Wise
+            <i class="fa fa-plane" aria-hidden="true"></i>
+        </h1>
     </header>
     
     <div class="destination-container">
@@ -49,10 +60,15 @@
         </div>
         
         <!-- Recommendation data block -->
-        <div id = "businesses"></div>
+        <div id = "businesses">
+            <h3>As Recommended by Yelp</h3>
+        </div>
 
 
-        <button id="bucketlist-btn">Add to my Bucket List</button>
+        <button id="bucketlist-btn">
+            Add to my Bucket List
+            <i class="fa fa-plane" aria-hidden="true">
+        </button>
 
     </div>
 

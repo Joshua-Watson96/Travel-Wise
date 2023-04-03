@@ -26,6 +26,7 @@ fetch(queryURL, {
       //define elements needed to build the business cards
       var businessCard = document.createElement('div');
       var name = document.createElement('h4');
+      name.classList.add("rec-name")
       var businessImage = document.createElement('img');
       var imageDiv = document.createElement('div');
       var address = document.createElement('p');
