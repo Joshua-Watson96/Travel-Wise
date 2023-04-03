@@ -2,6 +2,7 @@
 // when clicked, the sidebar will change to the 'sidebar_large' styling
 var sidebar = document.querySelector(".sidebar");
 
+
 document.querySelector("button").onclick = function () {
   sidebar.classList.toggle("sidebar-large");
 };
