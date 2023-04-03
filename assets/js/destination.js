@@ -61,6 +61,59 @@ fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/`+ city)
     console.error(error);
   });
 
+  // sets the backBtn on html, as a variable
+  var backBtn = document.getElementById("goBack")
+// add click event to back button; goes back to index.html
+  backBtn.addEventListener("click", function(event){
+    window.location.href="index.html"
+  
+  });
+
+// var timeZone = document.getElementById("timeZone")
+
+// function getTimeZoneData(lat, lng) {}
+
+// getTimeZoneData(39.6034810, -119.6822510, 1331161200)
+//   .then(data => {
+//     console.log(data);
+//   })
+//   .catch(error => {
+//     console.error(error);
+//   });
+  
+//   fetch("https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810%2C-119.6822510&timestamp=1331161200&key=AIzaSyDGgCB_6d25AXbEuEeg4ieHGmMiWczwcoA")
+//     .then(response => response.json())
+//     .then(data => {
+//       // const destTime = data.extract
+//       // timeZone.textContent += destTime
+//       if (data.status === "OK") {
+//         return data;
+//       } else {
+//         throw new Error(data.status);
+//       }
+//     });
+
+// // getTimeZoneData(city)
+// //   .then(data => {
+// //     console.log(data);
+// //   })
+// //   .catch(error => {
+// //     console.error(error);
+// //   });
+
+// fetch('http://api.timezonedb.com/v2.1/get-time-zone?key=1NWDSAUGIQUH&format=json&by=zone&zone=America/Chicago')
+// .then(response => response.json())
+// .then(data => {
+// const destTime = data.extract
+// timeZone.textContent += destTime
+// console.log(destTime)
+// })
+
+
+
+  
+
+
 
 
 
