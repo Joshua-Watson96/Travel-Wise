@@ -27,7 +27,16 @@ body {
     display: inline;
 }
 
+.destination-name-container{
+    display: inline-block
+}
 #map{
     height: 350px;
     width: 350px;
+}
+
+#description{
+    text-align: center;
+    font-size: 20px;
+
 }
