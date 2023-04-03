@@ -72,7 +72,7 @@ fetch(queryURL, {
 
   //save to bucketlist
 
-  var addTolistBtn = document.querySelector(".bucketlist-btn");
+  var addTolistBtn = document.querySelector("#bucketlist-btn");
 
   addTolistBtn.addEventListener("click", function(event) {
     console.log("add is clicked")
@@ -87,15 +87,19 @@ fetch(queryURL, {
 
     console.log(bucketCities.includes(cityTosave))
     if (bucketCities.includes(cityTosave) == true) {
-      alert("City already exists.")
+
+      $( function() {
+        $( "#dialog-fail" ).dialog();
+      } );
 
     } else {
       bucketCities.push(cityTosave);
       localStorage.setItem("group6-bucket-list-cities", JSON.stringify(bucketCities));
+
+      $( function() {
+        $( "#dialog-success" ).dialog();
+      } );
+
     }
-
-    console.log("value", bucketCities)
-
-
 
   });

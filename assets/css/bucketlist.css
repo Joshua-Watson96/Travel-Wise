@@ -88,6 +88,8 @@ header {
     background-color: whitesmoke;
     padding-bottom: 0.2em;
     box-shadow: 3px 3px 20px #888888;
+    display: flex;
+    flex-direction: column;
   }
 
   footer {
@@ -96,7 +98,6 @@ header {
     text-align: center;
     color: var(--light);
   }
-
 
   @media (min-width: 768px) {
     .submit-search {
