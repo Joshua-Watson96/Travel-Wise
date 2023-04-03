@@ -4,6 +4,7 @@
 
 /* the selected destination */
 var destination = localStorage.getItem("group6-travel-app-selected-city");
+console.log("The chosen destination: ", destination);
 
 /* variables that need to be used to fetch data from the server */
 var endpoint = "latest";
@@ -16,11 +17,12 @@ var base = "AUD";
 fetch('./currencies.json')
   .then(response => response.json())
   .then(data => {
-    symbol = data[destination];// change the currency symbol based on the selected city
-    console.log(symbol);
-  });
+    console.log(typeof data);
+    symbol = data[destination];
+    console.log(data);
+  }); // change the currency symbol based on the selected city
 
-console.log(symbol);
+// console.log("After fetching symbol from json file: ", symbol); // TODO: delete before submission
 
 /* selecting currency data id div block from destination.html page */
 var currencyEl = $(".currency-container");
@@ -33,13 +35,12 @@ var exchangeRateEl = $('<div>');
 * then render the rate on html page
 */
 function renderCurrencyData(data) {
-
-    const jsonString = data;
-    const jsonData = JSON.parse(jsonString);
+    const dataString = data;
+    const jsonData = JSON.parse(dataString);
     // console.log(jsonData); // TODO: delete this before project submission
     var rates = jsonData.rates[symbol];
     console.log(rates); // TODO: delete this before project submission
-    console.log(symbol); // TODO: delete this before project submission
+    console.log("Render function: ", symbol); // TODO: delete this before project submission
     const text = `1 ${base} = ${rates} ${symbol}`;
     exchangeRateEl.text(text);
     exchangeRateEl.attr('id', 'exchange-rate');
@@ -48,7 +49,7 @@ function renderCurrencyData(data) {
 
 /* headers that will be used in sending request to the server */
 var myHeaders = new Headers();
-myHeaders.append("apikey", "SlevtC27eE76f6urUpqiJisdHBEjYRXC");
+myHeaders.append("apikey", "sBkWGidcvvz1zCSDEmsTtV9vXxdD1Nvr");
 
 /* requesting data from the server */
 var requestOptions = {
