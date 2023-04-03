@@ -90,14 +90,18 @@ header {
     box-shadow: 3px 3px 20px #888888;
   }
 
-
-
+  footer {
+    background-color: var(--dark);
+    height: 3em;
+    text-align: center;
+    color: var(--light);
+  }
 
 
   @media (min-width: 768px) {
     .submit-search {
       margin: auto;
-      width: 50%;
+      width: 40%;
     }
   
   }
