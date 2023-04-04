@@ -1,20 +1,13 @@
 
-// var cityInput = document.getElementById("city-search");
-// var searchForm = document.getElementById("user-form");
+// var sidebar = document.querySelector(".sidebar");
 
-// var searchSubmit = function (event) {
-//     event.preventDefault();
-//     var city = cityInput.value.trim();
-//     if (city) {
-//       getCoords(city);
-//     } else {
-//       alert("Please enter a City");
-//     }
-//   };
+
+// document.querySelector("side-btn").onclick = function () {
+//   sidebar.classList.toggle("sidebar-large");
+// };
+
 
 var city = localStorage.getItem("group6-travel-app-selected-city");
-
-// console.log(city); // TODO: delete this before submitting
 
 /* to get the latitude and longtitude of the city  */
 var getCoords = function (city) {
@@ -105,6 +98,8 @@ getCoords(city);
       imageEl.src = "https://openweathermap.org/img/wn/"+ day.weather[0].icon + "@2x.png"
         
       /* rendering weather data on html */
+      // var tempTitle = document.createElement("p")
+      // var temp = tempTitle.textContent = "Temperature: "
       temperatureEl.textContent = "Temperature: " + day.main.temp + "°C";
       humidityEl.textContent = "Humidity: " + day.main.humidity + "%";
       windEl.textContent = "Wind: " + day.wind.speed + "km/h";
