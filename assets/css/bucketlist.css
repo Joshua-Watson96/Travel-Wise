@@ -187,11 +187,7 @@ header {
   .checkbox:checked {
     color: var(--green);
   }
-
-
-
-
-
+  
   footer {
     background-color: var(--dark);
     height: 3em;
