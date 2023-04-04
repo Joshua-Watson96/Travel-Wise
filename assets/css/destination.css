@@ -48,7 +48,10 @@ body {
 
 
 .button-link:hover {
+    background-color: var(--light);
+    cursor: pointer;
 }
+
 .destination-container {
     text-align: center;
  }
@@ -116,6 +119,7 @@ header {
 .city-map {
   display: flex;
   justify-content: center;
+}
 
 /* to style destination map section */
 .city-map-container {
