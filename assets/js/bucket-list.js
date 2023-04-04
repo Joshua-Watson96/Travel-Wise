@@ -1,10 +1,16 @@
 var cities = [];
-var bucketList = document.querySelector("#bucket-list-container")
+var bucketList = document.querySelector("#bucket-list")
+
 
 // This function is being called below and will run when the page loads. This will get the city history from local storage
 function init() {
     var savedCities = JSON.parse(localStorage.getItem("group6-bucket-list-cities"));
     console.log(savedCities)
+
+    var checked = localStorage.getItem("checkbox");
+    if (checked == true) {
+      checkbox.setAttribute("checkbox", true)
+    }
 
   
     // If cities are found in the history were retrieved from localStorage
@@ -24,7 +30,8 @@ function displaySavedcities() {
       var city = cities[i];
       
       var divCity = document.createElement("div");
-      divCity.setAttribute("style", "display: flex; justify-content: space-between; width: 50%; margin: auto")
+      divCity.classList.add("listItems")
+      divCity.setAttribute("style", "display: flex; justify-content: space-between; width: 80%;")
 
       var button = document.createElement("a");
       button.textContent = city;
@@ -37,13 +44,32 @@ function displaySavedcities() {
       var removeBtn = document.createElement("button");
       removeBtn.textContent = "Remove";
       removeBtn.classList.add("remove-btn")
-      removeBtn.setAttribute("style", "width: 30%")
+      removeBtn.setAttribute("style", "width: 10%")
 
-      divCity.appendChild(button)
+      var checkBox = document.createElement("input")
+      checkBox.setAttribute("type", "checkbox")
+      checkBox.classList.add("checkbox")
+
+      divCity.appendChild(checkBox)
+      divCity.appendChild(button) 
       divCity.appendChild(removeBtn)
 
       bucketList.appendChild(divCity);
+
+      // if(checkBox.checked) {
+      //   divCity.setAttribute("style", "background-color: #d6cd28")
+      // }
+      checkedCities()
+
     }
+}
+
+var checkedCities = function() {
+  var checkBox = document.querySelector(".checkbox");
+  if(checkBox.checked) {
+    localStorage.setItem("checkbox", true)
+    divCity.setAttribute("style", "background-color: #d6cd28")
+  }
 }
 
 
@@ -87,6 +113,44 @@ bucketList.addEventListener("click", function(event) {
 
 });
 
+  // sets the backBtn on html, as a variable
+  var homeBtn = document.getElementById("goBack")
+// add click event to back button; goes back to index.html
+  homeBtn.addEventListener("click", function(){
+    window.location.href="index.html"
+  });
+
+
+
+  // when clicked, the sidebar will change to the 'sidebar_large' styling
+var sidebar = document.querySelector(".sidebar");
+var sideContainer = document.querySelector(".side-container")
+var sidebarWidth
+var bucketListlink = document.querySelector("#bucket-link")
+var goBacklink = document.querySelector("#goBack")
+
+
+document.querySelector("#side-btn").onclick = function () {
+  sidebar.classList.toggle("sidebar-large");
+  var sidebarWidth1 = document.querySelector(".sidebar-large")
+
+  if (sidebarWidth1 === null) {
+    bucketListlink.textContent = ""
+    goBacklink.textContent = ""
+  } else {
+    bucketListlink.textContent = "Your bucket list"
+    goBacklink.textContent = "Back to Home"
+  }
+
+};
+
+// bucketListlink.onclick= function () {
+//   window.location.href = 'bucketlist.html'
+// }
+
+// goBacklink.onclick= function () {
+//   window.location.href = 'index.html'
+// }
 
 
 

@@ -39,6 +39,7 @@ body {
 }
 /* sets the properties for the bucket-link class */
 #bucket-link {
+  display: none;
   padding: 0;
   margin: 0 2em 0 0;
   color: var(--dark);
@@ -50,6 +51,8 @@ body {
   width: 30%;
 }
 /* sets the properties for the side-btn class */
+
+
 #side-btn {
   position: absolute;
   border: none;
@@ -231,4 +234,30 @@ footer {
     color: whitesmoke;
     cursor: pointer;
   }
+  
+@media (min-width: 768px) {
+  .submit-search {
+    margin: auto;
+    width: 50%;
+  }
+
+
+.city-cards {
+  display: block;
+  transition: 0.3s;
+  text-align: center;
+  width: 100%;
+  /* position: relative; */
+
 }
+
+  .card {
+    width: 60%;
+    /* position: absolute;
+    transition: all 0.5s; */
+  }
+
+
+
+  /* TODO: fix carousel*/
+
