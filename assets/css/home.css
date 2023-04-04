@@ -178,6 +178,8 @@ footer {
 
 
 .city-cards {
+  display: block;
+  transition: 0.3s;
   text-align: center;
   width: 100%;
   /* position: relative; */
