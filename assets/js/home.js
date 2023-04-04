@@ -1,7 +1,3 @@
-
-
-var carousel = document.querySelector(".city-cards1");
-
 // when clicked, the sidebar will change to the 'sidebar_large' styling
 var sidebar = document.querySelector(".sidebar");
 var sideContainer = document.querySelector(".side-container")
@@ -12,7 +8,7 @@ var bucketListlink = document.querySelector("#bucket-link")
 document.querySelector("#side-btn").onclick = function () {
   sidebar.classList.toggle("sidebar-large");
   var sidebarWidth1 = document.querySelector(".sidebar-large")
-
+  // console.log(sidebarWidth1)
   if (sidebarWidth1 === null) {
     bucketListlink.textContent = ""
   } else {
@@ -81,14 +77,14 @@ function createCitycard(index) {
   cityHref.appendChild(cityPhoto);
   cityCard.appendChild(cityHref);
 
-  console.log(cityH3)
-  console.log(cityPhoto)
-  console.log(cityHref)
-  console.log(cityCard)
+  // console.log(cityH3)
+  // console.log(cityPhoto)
+  // console.log(cityHref)
+  // console.log(cityCard)
 
 
   carousel.appendChild(cityCard)
-  console.log(carousel)
+  // console.log(carousel)
 }
 
 

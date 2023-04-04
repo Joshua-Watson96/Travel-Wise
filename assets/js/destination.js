@@ -110,9 +110,11 @@ document.querySelector("#side-btn").onclick = function () {
   if (sidebarWidth1 === null) {
     bucketListlink.textContent = ""
     goBacklink.textContent = ""
+
   } else {
     bucketListlink.textContent = "Your bucket list"
     goBacklink.textContent = "Back to Home"
+
   }
 
 };
