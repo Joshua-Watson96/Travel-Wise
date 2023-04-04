@@ -71,7 +71,7 @@ fetch(queryURL, {
 
 
   //save to bucketlist
-  var addTolistBtn = document.querySelector(".bucketlist-btn");
+  var addTolistBtn = document.querySelector("#bucketlist-btn");
 
 
   addTolistBtn.addEventListener("click", function(event) {
