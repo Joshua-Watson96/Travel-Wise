@@ -110,6 +110,38 @@ fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/`+ city)
 // })
 
 
+// when clicked, the sidebar will change to the 'sidebar_large' styling
+var sidebar = document.querySelector(".sidebar");
+var sideContainer = document.querySelector(".side-container")
+var sidebarWidth
+var bucketListlink = document.querySelector("#bucket-link")
+var goBacklink = document.querySelector("#goBack")
+
+
+document.querySelector("#side-btn").onclick = function () {
+  sidebar.classList.toggle("sidebar-large");
+  var sidebarWidth1 = document.querySelector(".sidebar-large")
+
+  if (sidebarWidth1 === null) {
+    bucketListlink.textContent = ""
+    goBacklink.textContent = ""
+  } else {
+    bucketListlink.textContent = "Your bucket list"
+    goBacklink.textContent = "Back to Home"
+  }
+
+};
+
+bucketListlink.onclick= function () {
+  window.location.href = 'bucketlist.html'
+}
+
+goBacklink.onclick= function () {
+  window.location.href = 'index.html'
+}
+
+
+
 
   
 
