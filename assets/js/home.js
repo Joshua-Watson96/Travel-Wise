@@ -7,7 +7,7 @@ document.querySelector("button").onclick = function () {
   sidebar.classList.toggle("sidebar-large");
 };
 
-var carousel = document.querySelector("city-cards-carousel");
+var carousel = document.querySelector(".city-cards-carousel");
 // console.log(carousel)
 var next = document.querySelector("#next-btn");
 var prev = document.querySelector("#prev-btn");
