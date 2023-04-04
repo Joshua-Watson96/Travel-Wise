@@ -1,11 +1,27 @@
 
 // when clicked, the sidebar will change to the 'sidebar_large' styling
 var sidebar = document.querySelector(".sidebar");
+var sideContainer = document.querySelector(".side-container")
+var sidebarWidth
+var bucketListlink = document.querySelector("#bucket-link")
 
 
-document.querySelector("button").onclick = function () {
+document.querySelector("#side-btn").onclick = function () {
   sidebar.classList.toggle("sidebar-large");
+  var sidebarWidth1 = document.querySelector(".sidebar-large")
+
+  if (sidebarWidth1 === null) {
+    bucketListlink.textContent = ""
+  } else {
+    bucketListlink.textContent = "Your bucket list"
+  }
+
 };
+
+bucketListlink.onclick= function () {
+  window.location.href = 'bucketlist.html'
+}
+
 
 var carousel = document.querySelector(".city-cards1");
 // console.log(carousel)
