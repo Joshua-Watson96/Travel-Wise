@@ -7,19 +7,16 @@ document.querySelector("button").onclick = function () {
   sidebar.classList.toggle("sidebar-large");
 };
 
-var carousel = document.querySelector(".city-cards1");
+var carousel = document.querySelector("city-cards-carousel");
 // console.log(carousel)
 var next = document.querySelector("#next-btn");
 var prev = document.querySelector("#prev-btn");
 
-// var slides = document.querySelectorAll(".slide")
-// console.log(slides)
-// var currentSlide;
-var index = 0;
-
+/* A list of cities that will be included in the home page top picks */
 var cityListcarousel = ["Osaka", "Barcelona", "New York", "Mexico City", "Rio de Janeiro"]
+/* A list of photos of the cities that will be included in the home page top picks */
 var cityPhotourl = ["./assets/images/Osaka.jpg", "./assets/images/Barcelona.jpg", "./assets/images/New-York.jpg", "./assets/images/Mexico-city.jpg", "./assets/images/Rio de Janeiro.png"]
-
+var index = 0;
 
 function createCitycard(index) {
   carousel.innerHTML = ""
