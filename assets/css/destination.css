@@ -40,6 +40,11 @@
     margin-bottom: 1em;
 } */
 
+.destination-container {
+    text-align: center;
+ }
+
+/* to style destination name section */
 .destination-name-container{
     background-color: var(--light);
     margin: 0 1em;
@@ -53,11 +58,8 @@
     text-align: center;
 }
 
-.destination-container {
-   text-align: center;
-}
-
-.city-map {
+/* to style destination map section */
+.city-map-container {
     display: flex;
     justify-content: center;
     
