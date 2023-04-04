@@ -1,6 +1,8 @@
 // Sets the variables for destination.js
 var city = localStorage.getItem("group6-travel-app-selected-city");
+console.log(city)
 var google = {};
+var Lat, Lng;
 
 
 // function for initializing the city map
@@ -15,8 +17,8 @@ geocoder.geocode({
   if (status == google.maps.GeocoderStatus.OK) {
     // variables for latitude and longitude
     // gets the lat and long coordinates from the Google Geocoder
-    var Lat = results[0].geometry.location.lat();
-    var Lng = results[0].geometry.location.lng();
+     Lat = results[0].geometry.location.lat();
+     Lng = results[0].geometry.location.lng();
     var myOptions = {
       zoom: 11,
       center: new google.maps.LatLng(Lat, Lng)
@@ -37,7 +39,24 @@ geocoder.geocode({
     marker: marker,
     title: city,
   });
+
+  var timestamp = Math.floor(Date.now() / 1000);
+  var timeZone = document.getElementById("timeZone")
+
+  fetch(`https://maps.googleapis.com/maps/api/timezone/json?location=${Lat},${Lng}&timestamp=${Math.floor(Date.now() / 1000)}&key=AIzaSyDGgCB_6d25AXbEuEeg4ieHGmMiWczwcoA`)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+    const localTime =  new Date((timestamp + data.dstOffset + data.rawOffset) * 1000);
+    const formattedTime = localTime.toLocaleString();
+    timeZone.textContent += formattedTime;
+    if (data.status === "OK") {
+      return data;
+    } else {
+      throw new Error(data.status);
+    }
     
+  });
   } else {
     alert("Something got wrong " + status);
   }
@@ -69,7 +88,7 @@ fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/`+ city)
   
   });
 
-// var timeZone = document.getElementById("timeZone")
+var timeZone = document.getElementById("timeZone")
 
 // function getTimeZoneData(lat, lng) {}
 
@@ -81,17 +100,8 @@ fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/`+ city)
 //     console.error(error);
 //   });
   
-//   fetch("https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810%2C-119.6822510&timestamp=1331161200&key=AIzaSyDGgCB_6d25AXbEuEeg4ieHGmMiWczwcoA")
-//     .then(response => response.json())
-//     .then(data => {
-//       // const destTime = data.extract
-//       // timeZone.textContent += destTime
-//       if (data.status === "OK") {
-//         return data;
-//       } else {
-//         throw new Error(data.status);
-//       }
-//     });
+ 
+    
 
 // // getTimeZoneData(city)
 // //   .then(data => {
@@ -101,13 +111,7 @@ fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/`+ city)
 // //     console.error(error);
 // //   });
 
-// fetch('http://api.timezonedb.com/v2.1/get-time-zone?key=1NWDSAUGIQUH&format=json&by=zone&zone=America/Chicago')
-// .then(response => response.json())
-// .then(data => {
-// const destTime = data.extract
-// timeZone.textContent += destTime
-// console.log(destTime)
-// })
+
 
 
 
