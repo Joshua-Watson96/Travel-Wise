@@ -18,29 +18,28 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <title>Travel Wise</title>
-  </head>
-  <body>
-    <!-- <header>
-        <h1>Travel Wise</h1>
-    </header> -->
 
-    <!-- <div class="container"> -->
-    <!-- Search bar: to search the travel destination -->
-    <!-- <div class="ui-widget">
-            <label for="myCity">City: </label>
-            <input id="myCity">
-            <button id="submit" type="button">Submit</button>
-            <input id="submit" type="button"> -->
-    <!-- </div> -->
+</head>
+<body>
+  <div class="side-container">
+    <div class="sidebar">
+      <button class="button-link" id="bucket-link">t</button>
+      <!-- <a href="./bucketlist.html" id="bucket-link"></a> -->
+      <button id="side-btn">
+        <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+      </button>
+    </div> 
+  </div>
+  
+  <div class="main-content">
+    <header>
+      <h1>
+        Travel Wise
+        <i class="fa fa-plane" aria-hidden="true"></i>
+      </h1>
+    </header>
+  </div>
 
-    <div class="side-container">
-      <div class="sidebar">
-        <a href="./bucketlist.html" id="bucket-link">Your bucket list</a>
-        <button id="side-btn">
-          <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-        </button>
-      </div>
-    </div>
 
     <div class="main-content">
       <header>
@@ -58,77 +57,30 @@
         <button id="submit" type="button">Search</button>
       </div>
 
-      <!-- To display top 5 travel destinations chosen by the team -->
-      <section class="top-cities">
-        <h2>Our Top Picks</h2>
+      <h2 class="top-pick-destinations">Our Top Picks</h2>
 
-        <div class="city-cards">
-          <button class="slide-arrow" id="prev-btn">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-          </button>
+      <!-- A container for all the top pick destinations card -->
+      <div class="city-cards">
+        
+        <!-- Back arrow button: to go back to the previous top pick destination -->
+        <button class="slide-arrow" id="prev-btn">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </button>
 
-          <button class="slide-arrow" id="next-btn">
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-          </button>
+        <!-- Front arrow button: to go to the next top pick destination  -->
+        <button class="slide-arrow" id="next-btn">
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </button>
 
-          <div class="city-cards1"></div>
+        <div class="city-cards-carousel"></div>
 
-          <!-- <div class="card slide" id="destination-1">
-            <a href="./destinations.html">
-              <h3 class="text-overlay">Osaka</h3>
-              <img
-              
-                src="./assets/images/Osaka.jpg"
-                alt="image of Osaka"
-                class="city-img" />
-            </a>
-          </div>
-
-          <div class="card slide" id="destination-2">
-            <a href="./destinations.html">
-              <h3 class="text-overlay">Barcelona</h3>
-              <img
-                src="./assets/images/Barcelona.jpg"
-                alt="image of Barcelona"
-                class="city-img" />
-            </a>
-          </div>
-
-          <div class="card slide" id="destination-3">
-            <a href="./destinations.html">
-              <h3 class="text-overlay">New York</h3>
-              <img
-                src="./assets/images/New-York.jpg"
-                alt="image of New York"
-                class="city-img" />
-            </a>
-          </div>
-
-          <div class="card slide" id="destination-4">
-            <a href="./destinations.html">
-              <h3 class="text-overlay">Mexico City</h3>
-              <img
-                src="./assets/images/Mexico-city.jpg"
-                alt="image of Mexico City"
-                class="city-img" />
-            </a>
-          </div>
-
-          <div class="card slide" id="destination-5">
-            <a href="./destinations.html">
-              <h3 class="text-overlay">Rio de Janeiro</h3>
-              <img
-                src="./assets/images/Rio de Janeiro.png"
-                alt="image of Rio de Janeiro"
-                class="city-img" />
-            </a>
-          </div>      -->
-        </div>
-      </section>
-    </div>
-
-    <footer>Travel Wise 2023</footer>
-
+      </div>
+    </section>
+  </div>
+         
+<footer>Travel Wise 2023</footer>
+  
+    <!-- linking javascript files to html -->
     <script src="./assets/js/home.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>

@@ -29,8 +29,8 @@
 
       <div class="side-container">
         <div class="sidebar">
-          <button class="button-link" id="goBack">Back to Home</button>
-          <button class="button-link" id="bucket-link">Your Bucket List</button>
+          <button class="button-link" id="goBack"></button>
+          <button class="button-link" id="bucket-link"></button>
           <button id="side-btn">
             <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
           </button>
@@ -91,11 +91,13 @@
       </button>
     </div>
 
-    <div id="dialog-fail" title="Basic dialog">
+
+    <div id="dialog-fail" title="Error: Already exists.">
       <p>The city already exist in your bucket list.</p>
     </div>
 
-    <div id="dialog-success" title="Basic dialog">
+    <div id="dialog-success" title="Successfully added.">
+
       <p>The city has been added to your bucket list.</p>
     </div>
 
@@ -118,8 +120,8 @@
           q = "__ib__",
           m = document,
           b = window;
-        b = b[c] || (b[c] = {});
-        var d = b.maps || (b.maps = {}),
+         b = b[c] || (b[c] = {});
+         var d = b.maps || (b.maps = {}),
           r = new Set(),
           e = new URLSearchParams(),
           u = () =>
@@ -139,7 +141,7 @@
               a.nonce = m.querySelector("script[nonce]")?.nonce || "";
               m.head.append(a);
             }));
-        d[l]
+         d[l]
           ? console.warn(p + " only loads once. Ignoring:", g)
           : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
       })({

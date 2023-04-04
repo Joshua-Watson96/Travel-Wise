@@ -1,8 +1,37 @@
 
+
 var carousel = document.querySelector(".city-cards1");
+
+// when clicked, the sidebar will change to the 'sidebar_large' styling
+var sidebar = document.querySelector(".sidebar");
+var sideContainer = document.querySelector(".side-container")
+var sidebarWidth
+var bucketListlink = document.querySelector("#bucket-link")
+
+
+document.querySelector("#side-btn").onclick = function () {
+  sidebar.classList.toggle("sidebar-large");
+  var sidebarWidth1 = document.querySelector(".sidebar-large")
+
+  if (sidebarWidth1 === null) {
+    bucketListlink.textContent = ""
+  } else {
+    bucketListlink.textContent = "Your bucket list"
+  }
+
+};
+
+
+var carousel = document.querySelector(".city-cards-carousel");
+
+bucketListlink.onclick= function () {
+  window.location.href = 'bucketlist.html'
+}
+
 // console.log(carousel)
 var next = document.querySelector("#next-btn");
 var prev = document.querySelector("#prev-btn");
+
 
 // var slides = document.querySelectorAll(".slide")
 // console.log(slides)
@@ -23,6 +52,13 @@ var cityPhotourl = [
   "./assets/images/Mexico-city.jpg",
   "./assets/images/Rio de Janeiro.png",
 ];
+
+/* A list of cities that will be included in the home page top picks */
+var cityListcarousel = ["Osaka", "Barcelona", "New York", "Mexico City", "Rio de Janeiro"]
+/* A list of photos of the cities that will be included in the home page top picks */
+var cityPhotourl = ["./assets/images/Osaka.jpg", "./assets/images/Barcelona.jpg", "./assets/images/New-York.jpg", "./assets/images/Mexico-city.jpg", "./assets/images/Rio de Janeiro.png"]
+var index = 0;
+
 
 function createCitycard(index) {
   carousel.innerHTML = "";
