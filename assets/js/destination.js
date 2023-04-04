@@ -1,6 +1,8 @@
 // Sets the variables for destination.js
 var city = localStorage.getItem("group6-travel-app-selected-city");
+console.log(city)
 var google = {};
+var Lat, Lng;
 
 
 // function for initializing the city map
@@ -15,8 +17,8 @@ geocoder.geocode({
   if (status == google.maps.GeocoderStatus.OK) {
     // variables for latitude and longitude
     // gets the lat and long coordinates from the Google Geocoder
-    var Lat = results[0].geometry.location.lat();
-    var Lng = results[0].geometry.location.lng();
+     Lat = results[0].geometry.location.lat();
+     Lng = results[0].geometry.location.lng();
     var myOptions = {
       zoom: 11,
       center: new google.maps.LatLng(Lat, Lng)
@@ -37,7 +39,26 @@ geocoder.geocode({
     marker: marker,
     title: city,
   });
+// sets variables for the local time
+  var timestamp = Math.floor(Date.now() / 1000);
+  var timeZone = document.getElementById("timeZone")
+// fetchs the Google time zone API and the local time via latitude, longitude and the current timestamp
+  fetch(`https://maps.googleapis.com/maps/api/timezone/json?location=${Lat},${Lng}&timestamp=${timestamp}&key=AIzaSyDGgCB_6d25AXbEuEeg4ieHGmMiWczwcoA`)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+    // inputs the local time to the HTML ID
+    const localTime =  new Date(timestamp * 1000);
+    const formattedTime = localTime.toLocaleString('en-US', {timeZone: data.timeZoneId, timeZoneOffset: (data.dstOffset + data.rawOffset) * 1000});
+   timeZone.textContent += formattedTime;
+    // if statement for if the status of the data is OK, data is returned.
+    if (data.status === "OK") {
+      return data;
+    } else {
+      throw new Error(data.status);
+    }
     
+  });
   } else {
     alert("Something got wrong " + status);
   }
@@ -69,45 +90,9 @@ fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/`+ city)
   
   });
 
-// var timeZone = document.getElementById("timeZone")
 
-// function getTimeZoneData(lat, lng) {}
 
-// getTimeZoneData(39.6034810, -119.6822510, 1331161200)
-//   .then(data => {
-//     console.log(data);
-//   })
-//   .catch(error => {
-//     console.error(error);
-//   });
-  
-//   fetch("https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810%2C-119.6822510&timestamp=1331161200&key=AIzaSyDGgCB_6d25AXbEuEeg4ieHGmMiWczwcoA")
-//     .then(response => response.json())
-//     .then(data => {
-//       // const destTime = data.extract
-//       // timeZone.textContent += destTime
-//       if (data.status === "OK") {
-//         return data;
-//       } else {
-//         throw new Error(data.status);
-//       }
-//     });
 
-// // getTimeZoneData(city)
-// //   .then(data => {
-// //     console.log(data);
-// //   })
-// //   .catch(error => {
-// //     console.error(error);
-// //   });
-
-// fetch('http://api.timezonedb.com/v2.1/get-time-zone?key=1NWDSAUGIQUH&format=json&by=zone&zone=America/Chicago')
-// .then(response => response.json())
-// .then(data => {
-// const destTime = data.extract
-// timeZone.textContent += destTime
-// console.log(destTime)
-// })
 
 
 
