@@ -48,7 +48,10 @@ body {
 
 
 .button-link:hover {
+    background-color: var(--light);
+    cursor: pointer;
 }
+
 .destination-container {
     text-align: center;
  }

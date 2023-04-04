@@ -108,5 +108,10 @@ document.addEventListener("click", function(event) {
     var cityName = cityNamealt.replace("image of ", "");
     localStorage.setItem("group6-travel-app-selected-city", cityName);
 
+  } else if (element.matches("h3") === true) {
+    var cityName = element.textContent
+    localStorage.setItem("group6-travel-app-selected-city", cityName);
   }
+
+
 });
