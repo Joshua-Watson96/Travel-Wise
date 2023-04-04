@@ -116,6 +116,7 @@ header {
 .city-map {
   display: flex;
   justify-content: center;
+}
 
 /* to style destination map section */
 .city-map-container {
