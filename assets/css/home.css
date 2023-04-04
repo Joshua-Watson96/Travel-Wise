@@ -38,6 +38,7 @@ body {
 }
 
 #bucket-link {
+  display: none;
   padding: 0;
   margin: 0 2em 0 0;
   color: var(--dark);
@@ -48,6 +49,7 @@ body {
 .sidebar-large {
   width: 30%;
 }
+
 
 #side-btn {
   position: absolute;
@@ -170,31 +172,6 @@ footer {
   color: var(--light);
 }
 
-@media (min-width: 768px) {
-  .submit-search {
-    margin: auto;
-    width: 50%;
-  }
-
-
-.city-cards {
-  display: block;
-  transition: 0.3s;
-  text-align: center;
-  width: 100%;
-  /* position: relative; */
-
-}
-
-  .card {
-    width: 60%;
-    /* position: absolute;
-    transition: all 0.5s; */
-  }
-
-
-
-  /* TODO: fix carousel*/
   #prev-btn,
   #next-btn {
     display: block;
@@ -229,4 +206,31 @@ footer {
     color: whitesmoke;
     cursor: pointer;
   }
+  
+@media (min-width: 768px) {
+  .submit-search {
+    margin: auto;
+    width: 50%;
+  }
+
+
+.city-cards {
+  display: block;
+  transition: 0.3s;
+  text-align: center;
+  width: 100%;
+  /* position: relative; */
+
+}
+
+  .card {
+    width: 60%;
+    /* position: absolute;
+    transition: all 0.5s; */
+  }
+
+
+
+  /* TODO: fix carousel*/
+
 }

@@ -15,7 +15,61 @@
     overflow-y: scroll;
   }
   
-  .fa {
+
+  .sidebar {
+    text-align: center;
+    margin-top: 0.5em;
+    width: 0;
+    height: 15%;
+    background-color: whitesmoke;
+    border: 0.05em solid var(--dark);
+    transition: 1s ease;
+    position: fixed;
+    z-index: 1;
+    padding-top: 1.8em;
+  }
+  
+  .sidebar-large {
+    width: 20%;
+  }
+  
+  .button-link {
+    font-family: "Kanit", sans-serif;
+    font-size: 1.2em;
+    width: 10em;
+    height: 2em;
+    margin-bottom: 0.5em;
+    margin-left: 0.2em;
+    background-color: var(--dark);
+    color: var(--green);
+    border: none;
+    border-radius: 1em;
+  }
+
+  .button-link:hover {
+    background-color: var(--light);
+    cursor: pointer;
+}
+
+#side-btn {
+  position: absolute;
+  border: none;
+  height: 60px;
+  width: 60px;
+  border: 0.4em solid var(--green);
+  border-radius: 50%;
+  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.3);
+  left: 100%;
+  top: 1.8rem;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.fa-plus {
+  color: var(--dark);
+}
+
+  .fa-plane {
     color: var(--green);
   }
 
@@ -81,22 +135,69 @@ header {
     background-color: var(--light);
     font-size: 2.3em;
     padding: 0.1em;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   #bucket-list-container {
-    margin: 2em 0.3em;
+    margin: 2em;
     background-color: whitesmoke;
     padding-bottom: 0.2em;
     box-shadow: 3px 3px 20px #888888;
     display: flex;
     flex-direction: column;
+    height: 100%;
   }
+
+  .listItems {
+    border-bottom: 0.1em solid var(--light);
+    margin: 0.2em auto;
+    padding: 0.3em;
+  }
+
+  .btn {
+    text-align: start;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: var(--dark);
+  }
+
+  .btn:hover {
+    text-align: start;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: var(--dark);
+  }
+
+  .remove-btn {
+    background-color: var(--dark);
+    color: whitesmoke;
+    border: none;
+  }
+
+  .remove-btn:hover {
+    background-color: var(--light);
+  }
+
+  .checkbox {
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  .checkbox:checked {
+    color: var(--green);
+  }
+
+
+
+
 
   footer {
     background-color: var(--dark);
     height: 3em;
     text-align: center;
     color: var(--light);
+    margin-bottom: 0;
   }
 
   @media (min-width: 768px) {
