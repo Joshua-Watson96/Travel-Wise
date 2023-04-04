@@ -61,7 +61,8 @@ var index = 0;
 
 
 function createCitycard(index) {
-  carousel.innerHTML = "";
+
+
   // console.log("index is what", index)
   var cityCard = document.createElement("div");
   cityCard.classList.add("card");
@@ -80,15 +81,16 @@ function createCitycard(index) {
   cityHref.appendChild(cityPhoto);
   cityCard.appendChild(cityHref);
 
-  // console.log(cityH3)
-  // console.log(cityPhoto)
-  // console.log(cityHref)
-  // console.log(cityCard)
+  console.log(cityH3)
+  console.log(cityPhoto)
+  console.log(cityHref)
+  console.log(cityCard)
 
-  carousel.appendChild(cityCard);
+
+  carousel.appendChild(cityCard)
+  console.log(carousel)
 }
 
-createCitycard(index);
 
 function navigate(direction) {
   index = index + direction;
@@ -98,7 +100,10 @@ function navigate(direction) {
   } else if (index > cityListcarousel.length - 1) {
     index = 0;
   }
-  createCitycard(index);
+
+  carousel.innerHTML = ""
+  createCitycard(index)
+
 }
 
 next.addEventListener("click", function (event) {
@@ -122,3 +127,39 @@ prev.addEventListener("click", function (event) {
 });
 
 // navigate(0);
+
+
+//to display the top destinations as stacked divs when the screen is small
+var screenWidth = window.innerWidth;
+// console.log(screenWidth)
+
+if (screenWidth <= 767) {
+  // console.log("test that the screenWidth variable")
+  for (var i = 0; i < cityListcarousel.length; i++) {
+    createCitycard(i)
+    // console.log(i)
+  } 
+} else {
+  createCitycard(index)
+}
+
+
+window.addEventListener('resize', function () { 
+  "use strict";
+  window.location.reload(); 
+});
+
+
+// window.addEventListener('resize', function (event) {
+//   if (screenWidth <= 767) {
+//     // console.log("test that the screenWidth variable")
+//     carousel.innerHTML = ""
+//     for (var i = 0; i < cityListcarousel.length; i++) {
+//       createCitycard(i)
+//       // console.log(i)
+//     } 
+//   } else {
+//     carousel.innerHTML = ""
+//     createCitycard(index)
+//   }
+// })
