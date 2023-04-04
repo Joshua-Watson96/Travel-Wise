@@ -40,9 +40,11 @@ fetch(queryURL, {
       url.classList.add("link-to-destination")
       url.target = "_blank"
       businessImage.src = business[i].image_url;
-      imageDiv.setAttribute('style', 'height: 100px; width: 200px; overflow: hidden');
+      imageDiv.setAttribute('style', 'overflow: hidden;');
+      imageDiv.setAttribute('id', 'business-image')
       imageDiv.appendChild(businessImage);
-      businessImage.setAttribute('style', 'max-width: 100%; max-height: 100%');
+      businessImage.setAttribute('style', 'max-width: 100%; max-height: 100%; height: 13em; width: 90%; margin: 1em auto');
+      imageDiv.setAttribute('id', 'image')
       name.textContent = business[i].name;
       address.textContent = 'Address: ' + business[i].location.display_address;
       rating.textContent = 'Rating: ' + business[i].rating;
