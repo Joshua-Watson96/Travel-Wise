@@ -6,6 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/destination.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,9 +21,6 @@
     <link
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
-    <link rel="stylesheet" href="./assets/css/destination.css" />
-    <!-- <link rel="stylesheet" href="./assets/css/style.css" /> -->
-    <link rel="stylesheet" href="./assets/css/currency.css" />
     <title>Travel Wise</title>
   </head>
   <body>
@@ -32,78 +30,85 @@
           <button class="button-link" id="goBack"></button>
           <button class="button-link" id="bucket-link"></button>
           <button id="side-btn">
-            <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-plus fa-3x" aria-hidden="true"></i>
           </button>
         </div>
       </div>
 
       <!-- Website name -->
       <div class="main-content">
-        <header>
-          <h1>
-            Travel Wise
-            <i class="fa fa-plane" aria-hidden="true"></i>
-          </h1>
-        </header>
+          <header>
+            <h1>
+              Travel Wise
+              <i class="fa fa-plane" aria-hidden="true"></i>
+            </h1>
+          </header>
       </div>
 
-    <!-- All the main content that will be displayed on the destinations.html page is in this container -->
-    <div class="destination-container">
-      <!-- Name of the city -->
-      <div>
-        <!-- div for the name of the city -->
-        <div class="destination-name-container">
-          <h2 class="destination-name">New York City</h2>
+      <!-- All the main content that will be displayed on the destinations.html page is in this container -->
+      <div class="destination-container">
+        <!-- Name of the city -->
+        <div>
+          <!-- div for the name of the city -->
+          <div class="destination-name-container">
+            <h2 class="destination-name">New York City</h2>
+          </div>
+
+          <section class="city-info">
+            <!-- div for city map -->
+            <div class="city-map" onload="initmap()">
+              <div id="map"></div>
+            </div>
+
+            <!-- div for city description-->
+            <div class="city-description">
+              <div id="description"></div>
+            </div>
+          <section>
+
+        <section class="small-cards">
+            <!-- div for city time-->
+            <div class="city-time"> 
+              <h3>Local Time</h3>
+                <div id="timeZone"></div>
+            </div>
+            
+          <!-- div for currency-->
+          <div class="currency-block currency-card" id="currency-data">
+            <h3>Currency Exchange</h3>
+              <div class="currency-container">
+            </div>
+          </div>
+        </section>
+
+        <!-- Weather data of the city -->
+        <div class="weather-block">
+          <div id="weather-container"></div>
         </div>
 
-        <!-- div for city map -->
-        <div class="city-map" onload="initmap()">
-          <div id="map"></div>
-        </div>
-
-        <!-- div for city description-->
-        <div class="city-description">
-          <div id="description"></div>
-        </div>
-        
-        <!-- div for city time-->
-        <div class="city-time">
-          <div id="timeZone"></div>
-        </div>
-        
-      <!-- div for currency-->
-      <div class="currency-block currency-card" id="currency-data">
-        <div class="currency-container">
-          <h3>Currency</h3>
-        </div>
+        <!-- Top 10 Recommended places of the city  -->
+        <div id="businesses-container">
+          <h3>Yelp Recommendations</h3>
+          <div id="businesses"></div>
+      </div>
+      
+      <!-- button for adding to bucket list-->
+        <button id="bucketlist-btn">
+          Add to my Bucket List <i class="fa fa-plane" aria-hidden="true"></i>
+        </button>
       </div>
 
-      <!-- Weather data of the city -->
-      <div class="weather-block">
-        <div id="weather-container"></div>
+      <!-- div for dialog box; failed to add to bucket list-->
+      <div id="dialog-fail" title="Error: Already exists.">
+        <p>The city already exist in your bucket list.</p>
       </div>
 
-      <!-- Top 10 Recommended places of the city  -->
-      <div id="businesses-container">
-        <h3>Yelp Recommendations</h3>
-        <div id="businesses"></div>
-    </div>
-    
-    <!-- button for adding to bucket list-->
-      <button id="bucketlist-btn">
-        Add to my Bucket List <i class="fa fa-plane" aria-hidden="true"></i>
-      </button>
-    </div>
+      <!-- div for dialog box; Succesfully added to bucket list-->
+      <div id="dialog-success" title="Successfully added.">
+      <p>The city has been added to your bucket list.</p>
+      </div>
 
-    <!-- div for dialog box; failed to add to bucket list-->
-    <div id="dialog-fail" title="Error: Already exists.">
-      <p>The city already exist in your bucket list.</p>
-    </div>
-
-    <!-- div for dialog box; Succesfully added to bucket list-->
-    <div id="dialog-success" title="Successfully added.">
-    <p>The city has been added to your bucket list.</p>
-    </div>
+   
 
     <!-- destinations html footer-->
     <footer>Travel Wise 2023</footer>
