@@ -30,7 +30,7 @@
   <!-- div for sidebar -->
   <div class="side-container">
     <div class="sidebar">
-      <button class="button-link" id="bucket-link">t</button>
+      <button class="button-link" id="bucket-link"></button>
       <!-- <a href="./bucketlist.html" id="bucket-link"></a> -->
       <button id="side-btn">
         <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
@@ -48,15 +48,7 @@
     </header>
   </div>
 
-  <!-- div for main content -->
-    <div class="main-content">
-      <header>
-        <h1>
-          Travel Wise
-          <i class="fa fa-plane" aria-hidden="true"></i>
-        </h1>
-      </header>
-    </div>
+
   <!-- div for container; search bar and button-->
     <div class="container">
       <div class="ui-widget submit-search">
@@ -65,15 +57,14 @@
         <button id="submit" type="button">Search</button>
       </div>
 
-      <h2 class="top-pick-destinations">Our Top Picks</h2>
+    <!-- A container for all the top pick destinations card -->
+    <div class="city-cards">
+      
+      <!-- Back arrow button: to go back to the previous top pick destination -->
+      <button class="slide-arrow" id="prev-btn">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </button>
 
-      <!-- A container for all the top pick destinations card -->
-      <div class="city-cards">
-        
-        <!-- Back arrow button: to go back to the previous top pick destination -->
-        <button class="slide-arrow" id="prev-btn">
-          <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        </button>
 
         <!-- Front arrow button: to go to the next top pick destination  -->
         <button class="slide-arrow" id="next-btn">
@@ -82,7 +73,8 @@
         <!-- div for carousel -->
         <div class="city-cards-carousel"></div>
 
-      </div>
+
+    </div>
     </section>
   </div>
   

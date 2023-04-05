@@ -39,7 +39,7 @@ body {
 }
 /* sets the properties for the bucket-link class */
 #bucket-link {
-  display: none;
+  /* display: none; */
   padding: 0;
   margin: 0 2em 0 0;
   color: var(--dark);
