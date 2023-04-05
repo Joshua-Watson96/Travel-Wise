@@ -106,6 +106,8 @@ var goBacklink = document.querySelector("#goBack")
 // creates on click function for the sidebar button
 document.querySelector("#side-btn").onclick = function () {
   sidebar.classList.toggle("sidebar-large");
+  bucketListlink.classList.toggle("button-link-visible");
+  goBacklink.classList.toggle("button-link-visible");
   var sidebarWidth1 = document.querySelector(".sidebar-large")
 
   if (sidebarWidth1 === null) {
