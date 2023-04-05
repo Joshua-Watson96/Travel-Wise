@@ -1,9 +1,10 @@
+/* sets the root colours for the home.css */
 :root {
   --dark: #07434e;
   --light: #769fa0;
   --green: #d6cd28;
 }
-
+/* sets the properties for the body element */
 body {
   background-image: radial-gradient(var(--dark) 0.5px, whitesmoke.5px);
   background-size: 10px 10px;
@@ -14,17 +15,17 @@ body {
   height: 100vh;
   overflow-y: scroll;
 }
-
+/* sets the colour for .fa */
 .fa {
   color: var(--green);
 }
-
+/* sets the colour for .fa-plus */
 .fa-plus {
   color: var(--dark);
   font-size: larger;
 }
 
-/* TODO: fix sidebar - make text within hidden panel */
+/* sets the properties for the sidebar id */
 .sidebar {
   margin-top: 0.5em;
   width: 0;
@@ -36,7 +37,7 @@ body {
   z-index: 1;
   padding-top: 1.8em;
 }
-
+/* sets the properties for the bucket-link class */
 #bucket-link {
   display: none;
   padding: 0;
@@ -45,7 +46,7 @@ body {
   font-size: 1em;
   transition: 1s ease;
 }
-
+/* sets the width of the sidebar id */
 .sidebar-large {
   width: 30%;
 }
@@ -65,7 +66,7 @@ body {
   transform: translateX(-50%);
   cursor: pointer;
 }
-
+/* sets the properties for the header element */
 header {
   display: flex;
   justify-content: center;
@@ -78,11 +79,11 @@ header {
   font-size: 1.5em;
   border-bottom: 0.25em solid var(--green);
 }
-
+/* sets the text for the container class */
 .container {
   text-align: center;
 }
-
+/* sets the properties for the submit-search id */
 .submit-search {
   background-color: var(--green);
   margin: 2em 1.5em;
@@ -90,7 +91,7 @@ header {
   padding: 1.5em;
   box-shadow: 0px 0px 20px #888888;
 }
-
+/* sets the properties for the myCity class */
 #myCity {
   width: 90%;
   height: 3em;
@@ -113,20 +114,20 @@ header {
   font-size: 1em;
   box-shadow: 2px 3px 10px #847f26;
 }
-
+/* sets what happens when the user hovers over the submit button */
 #submit:hover {
   background-color: var(--dark);
   color: whitesmoke;
   cursor: pointer;
 }
-
+/* sets the text properties for the pages h2 */
 h2 {
   color: var(--green);
   background-color: var(--dark);
   font-size: 2.3em;
   padding: 0.1em;
 }
-
+/* sets the properties for the top-cities id */
 .top-cities {
   margin: 2em 1.5em 5em 1.5em;
   background-color: var(--light);
@@ -134,16 +135,16 @@ h2 {
   min-height: 30em;
   box-shadow: 3px 3px 20px #888888;
 }
-
+/* sets slide arrow id display to none */
 .slide-arrow {
   display: none;
 }
-
+/* sets the position and margin for the card id */
 .card {
   position: relative;
   margin: 2em auto;
 }
-
+/* sets the properties for the text-overlay id */
 .text-overlay {
   position: absolute;
   left: 6.8%;
@@ -154,7 +155,7 @@ h2 {
   border-radius: 0.5em;
   border: 0.2em solid var(--green);
 }
-
+/* sets the properties for the city image id */
 .city-img {
   display: block;
   height: 13em;
@@ -162,7 +163,7 @@ h2 {
   margin: auto;
   border: 0.3em solid var(--light);
 }
-
+/* sets what happens when the user hovers over the image in the city image id */
 .city-img:hover {
   border: 0.3em solid var(--green);
 }

@@ -1,10 +1,11 @@
 // get recommended places from Yelp
+// global variables for get-recommendations
 var city = localStorage.getItem("group6-travel-app-selected-city");
 var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=" + city + "&categories=amusementparks&categories=parks&categories=museums&categories=aquariums&categories=arcades&categories=tours&categories=arts&categories=attractionfarms&sort_by=review_count&limit=10";
 var apiKey = "kSEvBygo41ZOQRY3djEBiQRa71zBbcE8x6I52buCSjLkMqLdHmjg9YbM4H-WcP6dR3cP0M8PPoh193-K3aq4ns4OJmbEv_PvZFjJmDCKa4OdyuYgkrRgusApVqciZHYx"; 
 
 var businessContainer = document.getElementById('businesses');
-
+// fetchs the url for the yelp API
 fetch(queryURL, {
   method: 'GET', //GET is the default.
   headers: {
