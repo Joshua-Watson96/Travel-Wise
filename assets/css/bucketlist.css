@@ -87,14 +87,58 @@ header {
   }
 /* sets the properties for the bucket list container class */
   #bucket-list-container {
-    margin: 2em;
+    margin: 1.5em;
     background-color: whitesmoke;
     padding-bottom: 0.2em;
     box-shadow: 3px 3px 20px #888888;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 30em;
+    height: 200%;
   }
+
+  .listItems {
+    border-bottom: 0.1em solid var(--light);
+    margin: 0.2em auto;
+    padding: 0.3em;
+    
+  }
+
+  .btn {
+    text-align: start;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: var(--dark);
+  }
+
+  .btn:hover {
+    text-align: start;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: var(--dark);
+  }
+
+  .remove-btn {
+    background-color: var(--dark);
+    color: whitesmoke;
+    border: none;
+    font-family: "Kanit", sans-serif;
+  }
+
+  .remove-btn:hover {
+    background-color: var(--light);
+    cursor: pointer;
+  }
+
+  .checkbox {
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  .checkbox:checked {
+    color: var(--green);
+  }
+  
 /* sets the properties for the footer element */
   footer {
     background-color: var(--dark);
