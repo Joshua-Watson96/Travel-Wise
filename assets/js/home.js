@@ -4,7 +4,7 @@ var sideContainer = document.querySelector(".side-container")
 var sidebarWidth
 var bucketListlink = document.querySelector("#bucket-link")
 
-
+// adds on click function to the sidebar button
 document.querySelector("#side-btn").onclick = function () {
   sidebar.classList.toggle("sidebar-large");
   var sidebarWidth1 = document.querySelector(".sidebar-large")
@@ -17,9 +17,9 @@ document.querySelector("#side-btn").onclick = function () {
 
 };
 
-
+// sets a carousel for the for the selected div
 var carousel = document.querySelector(".city-cards-carousel");
-
+// sets a on click function to go to the bucketlist html
 bucketListlink.onclick= function () {
   window.location.href = 'bucketlist.html'
 }
@@ -56,6 +56,7 @@ var cityPhotourl = ["./assets/images/Osaka.jpg", "./assets/images/Barcelona.jpg"
 var index = 0;
 
 
+//creates a function to create the city card index
 function createCitycard(index) {
 
 
@@ -73,6 +74,10 @@ function createCitycard(index) {
   cityH3.classList.add("text-overlay");
   cityH3.textContent = cityListcarousel[index];
 
+  cityHref.appendChild(cityH3)
+  cityHref.appendChild(cityPhoto)
+  cityCard.appendChild(cityHref)
+//console logs all of the created elements
   cityHref.appendChild(cityH3);
   cityHref.appendChild(cityPhoto);
   cityCard.appendChild(cityHref);
@@ -87,7 +92,7 @@ function createCitycard(index) {
   // console.log(carousel)
 }
 
-
+// creates function to navigate the direction index
 function navigate(direction) {
   index = index + direction;
   // console.log(index)
@@ -102,6 +107,7 @@ function navigate(direction) {
 
 }
 
+// adds click function to show next recommended destination
 next.addEventListener("click", function (event) {
   event.stopPropagation();
   navigate(1);
@@ -111,6 +117,7 @@ next.addEventListener("click", function (event) {
   // })
 });
 
+// adds click function to show previous recommended destination
 prev.addEventListener("click", function (event) {
   event.stopPropagation();
   navigate(-1);
@@ -118,11 +125,9 @@ prev.addEventListener("click", function (event) {
   // currentSlide-
   // slides.forEach((slide, index) => {
   // carousel.innerHTML = slide[index]
-
-  // });
+  
+// });
 });
-
-// navigate(0);
 
 
 //to display the top destinations as stacked divs when the screen is small
@@ -139,23 +144,9 @@ if (screenWidth <= 767) {
   createCitycard(index)
 }
 
-
+// creates function to resize on reload
 window.addEventListener('resize', function () { 
   "use strict";
   window.location.reload(); 
 });
 
-
-// window.addEventListener('resize', function (event) {
-//   if (screenWidth <= 767) {
-//     // console.log("test that the screenWidth variable")
-//     carousel.innerHTML = ""
-//     for (var i = 0; i < cityListcarousel.length; i++) {
-//       createCitycard(i)
-//       // console.log(i)
-//     } 
-//   } else {
-//     carousel.innerHTML = ""
-//     createCitycard(index)
-//   }
-// })
