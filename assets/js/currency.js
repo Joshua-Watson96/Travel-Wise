@@ -6,6 +6,7 @@
 // SlevtC27eE76f6urUpqiJisdHBEjYRXC
 // QaMPdQvBv497O2H54foAV8WnMhQzurnJ
 // jfuosGoy8iVo05vjAEZURsKhYyYP6lvh
+// 9uOvRX8iS0Fegq3opZyi87ZWXRyj3vTr
 
 /* to store key value pair of cities and its currencies  */
 var citiesCurrencies = 

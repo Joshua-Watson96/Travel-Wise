@@ -60,7 +60,7 @@ body {
 
 
 /* sets the text to center in the destination container */
-.destination-container {
+.destination-content-container {
     text-align: center;
  }
 
@@ -121,7 +121,7 @@ header {
 }
 
 /* sets the text in the desination container to center */
-.destination-container {
+.destination-content-container {
   text-align: center;
 }
 /* sets the display for the city map class */
