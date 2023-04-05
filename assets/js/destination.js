@@ -43,32 +43,8 @@ geocoder.geocode({
 );
 };
 
-// // sets variables for the local time
-// var timeZone = document.getElementById("timeZone")
 
-// function updateTime(){
-//   var timestamp = Math.floor(Date.now() / 1000);
- 
-// // fetchs the Google time zone API and the local time via latitude, longitude and the current timestamp
-//   fetch(`https://maps.googleapis.com/maps/api/timezone/json?location=${Lat},${Lng}&timestamp=${timestamp}&key=AIzaSyDGgCB_6d25AXbEuEeg4ieHGmMiWczwcoA`)
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data)
-//     // inputs the local time to the HTML ID
-//     const localTime =  new Date(timestamp * 1000);
-//     const formattedTime = localTime.toLocaleString('en-US', {timeZone: data.timeZoneId, timeZoneOffset: (data.dstOffset + data.rawOffset) * 1000});
-//    timeZone.textContent += formattedTime;
-//     // if statement for if the status of the data is OK, data is returned.
-//     if (data.status === "OK") {
-//       return data;
-//     } else {
-//       throw new Error(data.status);
-//     }
-    
-//   });
-// }
-// };
-
+// variable for the local time 
 var timeZone = document.getElementById("timeZone")
 // Function to get the local time
 function updateTime(){
