@@ -7,7 +7,7 @@
 // };
 
 
-var city = localStorage.getItem("group6-travel-app-selected-city");
+var city = localStorage.getItem("userSelectedCity");
 
 /* to get the latitude and longtitude of the city  */
 var getCoords = function (city) {

@@ -88,13 +88,13 @@ $( function() {
 var cityButton = document.getElementById("submit");
 var cityTextbox = document.getElementById("myCity");
 
-localStorage.setItem("group6-travel-app-selected-city", "");
+localStorage.setItem("userSelectedCity", "");
 
 
 // Add click event to button
 cityButton.addEventListener("click", function(event) {
   if (cityTextbox.value != "") {
-    localStorage.setItem("group6-travel-app-selected-city", cityTextbox.value);
+    localStorage.setItem("userSelectedCity", cityTextbox.value);
     window.location.href = 'destinations.html'
   }
 });
@@ -107,11 +107,11 @@ document.addEventListener("click", function(event) {
   if (element.matches("img") === true) {
     var cityNamealt = element.getAttribute("alt");
     var cityName = cityNamealt.replace("image of ", "");
-    localStorage.setItem("group6-travel-app-selected-city", cityName);
+    localStorage.setItem("userSelectedCity", cityName);
 
   } else if (element.matches("h3") === true) {
     var cityName = element.textContent
-    localStorage.setItem("group6-travel-app-selected-city", cityName);
+    localStorage.setItem("userSelectedCity", cityName);
   }
 
 
