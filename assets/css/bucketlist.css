@@ -1,9 +1,10 @@
+/* sets the root colours for the bucketlist css */
 :root {
     --dark: #07434e;
     --light: #769fa0;
     --green: #d6cd28;
   }
-  
+  /* sets the properties for the body element */
   body {
     background-image: radial-gradient(var(--dark) 0.5px, whitesmoke.5px);
     background-size: 10px 10px;
@@ -14,12 +15,12 @@
     height: 100vh;
     overflow-y: scroll;
   }
-  
+  /* sets the colour for the .fa id */
   .fa {
     color: var(--green);
   }
 
-
+/* sets the properties for the header element */
 header {
     display: flex;
     justify-content: center;
@@ -33,11 +34,11 @@ header {
     border-bottom: 0.25em solid var(--green);
   }
 
-
+/* sets the text for the container id to center */
 .container {
     text-align: center;
   }
-  
+/* sets the properties for the submit.search id button */
   .submit-search {
     background-color: var(--green);
     margin: 2em 1.5em;
@@ -46,7 +47,7 @@ header {
     padding: 1.5em;
     box-shadow: 0px 0px 20px #888888;
   }
-  
+  /* sets the properties for the myCity class */
   #myCity {
     width: 90%;
     height: 3em;
@@ -58,7 +59,7 @@ header {
     font-family: "Kanit", sans-serif;
     box-shadow: 1px 2px 10px #847f26;
   }
-  
+  /* sets the properties for the submit class */
   #submit{
     background-color: var(--light);
     padding: 0.3em 2em;
@@ -69,36 +70,84 @@ header {
     font-size: 1em;
     box-shadow: 2px 3px 10px #847f26;
   }
-  
+  /* sets what happens when the user hovers over the submit button */
   #submit:hover {
     background-color: var(--dark);
     color: whitesmoke;
     cursor: pointer;
   }
-
+/* sets the properties for the h2 in the bucketlist html */
   h2 {
     color: var(--dark);
     background-color: var(--light);
     font-size: 2.3em;
     padding: 0.1em;
+    margin-top: 0;
+    margin-bottom: 0;
   }
-
+/* sets the properties for the bucket list container class */
   #bucket-list-container {
-    margin: 2em 0.3em;
+    margin: 1.5em;
     background-color: whitesmoke;
     padding-bottom: 0.2em;
     box-shadow: 3px 3px 20px #888888;
     display: flex;
     flex-direction: column;
+    min-height: 30em;
+    height: 200%;
   }
 
+  .listItems {
+    border-bottom: 0.1em solid var(--light);
+    margin: 0.2em auto;
+    padding: 0.3em;
+    
+  }
+
+  .btn {
+    text-align: start;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: var(--dark);
+  }
+
+  .btn:hover {
+    text-align: start;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: var(--dark);
+  }
+
+  .remove-btn {
+    background-color: var(--dark);
+    color: whitesmoke;
+    border: none;
+    font-family: "Kanit", sans-serif;
+  }
+
+  .remove-btn:hover {
+    background-color: var(--light);
+    cursor: pointer;
+  }
+
+  .checkbox {
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  .checkbox:checked {
+    color: var(--green);
+  }
+  
+/* sets the properties for the footer element */
   footer {
     background-color: var(--dark);
     height: 3em;
     text-align: center;
     color: var(--light);
+    margin-bottom: 0;
   }
-
+/* makes the page responsive */
   @media (min-width: 768px) {
     .submit-search {
       margin: auto;
@@ -106,5 +155,64 @@ header {
     }
   
   }
+
+/* sets the properties for the sidebar id */
+.sidebar {
+  margin-top: 0.5em;
+  width: 0;
+  height: 9%;
+  background-color: whitesmoke;
+  border: 0.05em solid var(--dark);
+  transition: 1s ease;
+  position: fixed;
+  z-index: 1;
+  padding-top: 1.8em;
+}
+/* sets the properties for the button-link class */
+.button-link {
+  font-family: "Kanit", sans-serif;
+  font-size: 1.2em;
+  width: 0;
+  height: 0;
+  margin-bottom: 0.5em;
+  margin-left: 0.5em;
+  color: var(--green);
+  border: none;
+  border-radius: 1em;
+}
+
+/* sets the cursor when hovering over the link button */
+.button-link-visible {
+    background-color: var(--dark);
+    cursor: pointer;
+    width: 10em;
+    height: 2em;
+}
+
+.button-link-visible:hover {
+  background-color: var(--light);
+  cursor: pointer;
+}
+
+/* sets the width of the sidebar id */
+.sidebar-large {
+  width: 17em;
+}
+/* sets the properties for the side-btn class */
+
+
+#side-btn {
+  position: absolute;
+  border: none;
+  height: 60px;
+  width: 60px;
+  border: 0.4em solid var(--green);
+  border-radius: 50%;
+  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.3);
+  left: 100%;
+  top: 1rem;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
   
   
