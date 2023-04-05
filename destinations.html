@@ -9,41 +9,36 @@
     <link rel="stylesheet" href="./assets/css/destination.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
-      rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Sofia" />
-    <link
-      rel="stylesheet"
-      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="./assets/css/destination.css" />
     <title>Travel Wise</title>
   </head>
   <body>
-    <!-- div for side bar-->
-      <div class="side-container">
-        <div class="sidebar">
-          <button class="button-link" id="goBack"></button>
-          <button class="button-link" id="bucket-link"></button>
-          <button id="side-btn">
-            <i class="fa fa-plus fa-3x" aria-hidden="true"></i>
-          </button>
-        </div>
+    <!-- Side bar -->
+    <div class="side-container">
+      <div class="sidebar">
+        <button class="button-link" id="goBack"></button>
+        <button class="button-link" id="bucket-link"></button>
+        <button id="side-btn">
+          <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+        </button>
       </div>
+    </div>
 
-      <!-- Website name -->
-      <div class="main-content">
-          <header>
-            <h1>
-              Travel Wise
-              <i class="fa fa-plane" aria-hidden="true"></i>
-            </h1>
-          </header>
-      </div>
+
+    <!-- Name of the travel website  -->
+    <div class="website-name">
+      <header>
+        <h1>
+          Travel Wise
+          <i class="fa fa-plane" aria-hidden="true"></i>
+        </h1>
+      </header>
+    </div>
 
 
       <!-- All the main content that will be displayed on the destinations.html page is in this container -->
@@ -56,14 +51,11 @@
           </div>
 
     <!-- All the main content that will be displayed on the destinations.html page is in this container -->
-    <div class="destination-container">
+    <div class="destination-content-container">
       <!-- Name of the city -->
-      <div>
-        <!-- div for the name of the city -->
-        <div class="destination-name-container">
-          <h2 class="destination-name"></h2>
-        </div>
-
+      <section class="destination-name-container">
+        <h2 class="destination-name"></h2>
+      </section>
 
           <section class="city-info">
             <!-- div for city map -->
@@ -95,6 +87,7 @@
         <!-- Weather data of the city -->
         <div class="weather-block">
           <div id="weather-container"></div>
+
         </div>
 
         <!-- Top 10 Recommended places of the city  -->
@@ -120,6 +113,7 @@
       </div>
 
    
+
 
     <!-- destinations html footer-->
     <footer>Travel Wise 2023</footer>
