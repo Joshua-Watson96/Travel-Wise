@@ -1,133 +1,142 @@
+/* To retrieve the latest currency exchange rate data of the selected destination */
+/* Used Fixer.io API to get the required data */
+
 // extra API key
 // sBkWGidcvvz1zCSDEmsTtV9vXxdD1Nvr
 // SlevtC27eE76f6urUpqiJisdHBEjYRXC
 // QaMPdQvBv497O2H54foAV8WnMhQzurnJ
 
+/* to store key value pair of cities and its currencies  */
+var citiesCurrencies = 
+{
+  "Shanghai": "CNY",
+  "São Paulo": "BRL",
+  "Mexico City": "MXN",
+  "Cairo": "EGP",
+  "Mumbai": "INR",
+  "Beijing": "CNY",
+  "Dhaka": "BDT",
+  "Osaka": "JPY",
+  "New York": "USD",
+  "Karachi": "PKR",
+  "Buenos Aires": "ARS",
+  "Chongqing": "CNY",
+  "Istanbul": "TRY",
+  "Kolkata": "INR",
+  "Manila": "PHP",
+  "Lagos": "NGN",
+  "Rio de Janeiro": "BRL",
+  "Tianjin": "CNY",
+  "Kinshasa": "CDF",
+  "Guangzhou": "CNY",
+  "Los Angeles": "USD",
+  "Moscow": "RUB",
+  "Shenzhen": "CNY",
+  "Lahore": "PKR",
+  "Bangalore": "INR",
+  "Paris": "EUR",
+  "Bogotá": "COP",
+  "Jakarta": "IDR",
+  "Chennai": "INR",
+  "Lima": "PEN",
+  "Bangkok": "THB",
+  "Seoul": "KRW",
+  "Nagoya": "JPY",
+  "Hyderabad": "INR",
+  "London": "GBP",
+  "Tehran": "IRR",
+  "Chicago": "USD",
+  "Chengdu": "CNY",
+  "Nanjing": "CNY",
+  "Wuhan": "CNY",
+  "Ho Chi Minh City": "VND",
+  "Luanda": "AOA",
+  "Ahmedabad": "INR",
+  "Kuala Lumpur": "MYR",
+  "Hong Kong": "HKD",
+  "Dongguan": "CNY",
+  "Hangzhou": "CNY",
+  "Foshan": "CNY",
+  "Shenyang": "CNY",
+  "Riyadh": "SAR",
+  "Baghdad": "IQD",
+  "Santiago": "CLP",
+  "Surat": "INR",
+  "Madrid": "EUR",
+  "Suzhou": "CNY",
+  "Pune": "INR",
+  "Harbin": "CNY",
+  "Houston": "USD",
+  "Dallas": "USD",
+  "Toronto": "CAD",
+  "Miami": "USD",
+  "Singapore": "SGD",
+  "Philadelphia": "USD",
+  "Atlanta": "USD",
+  "Fukuoka": "JPY",
+  "Khartoum": "SDG",
+  "Barcelona": "EUR",
+  "Johannesburg": "ZAR",
+  "Saint Petersburg": "RUB",
+  "Qingdao": "CNY",
+  "Dalian": "CNY",
+  "Washington": "USD",
+  "Yangon": "MMK",
+  "Alexandria": "EGP",
+  "Jinan": "CNY",
+  "Guadalajara": "MXN"
+}
+
 /* the selected destination */
-var destinationC = localStorage.getItem("group6-travel-app-selected-city");
-console.log("The chosen destination: ", destinationC);
+var destinatedCity = localStorage.getItem("group6-travel-app-selected-city");
+console.log("The chosen destination: ", destinatedCity);
 
 /* variables that need to be used to fetch data from the server */
 var endpoint = "latest";
 var symbol = "USD";
 var base = "AUD";
 
+
+/* the currency code of the selected destination */
+var symbol = citiesCurrencies[destinatedCity];
+/* selecting currency data id div block from destination.html page */
+var currencyEl = $(".currency-container");
+/* creating the div block to display exchange rate */
+var exchangeRateEl = $('<div>');
+
 /* 
- * fetching currency code of the selected city from the currency.json file 
- */
-fetch('../currencies.json')
-  .then(response => {
-    console.log(response);
-    return response.json()})
-  .then(data => {
-    console.log(typeof data);
-    symbol = data[destinationC]; // change the currency symbol based on the selected city
-    console.log(data);
-    console.log(destinationC);
-    console.log(data[destinationC]);
-    
-    // console.log("After fetching symbol from json file: ", symbol); // TODO: delete before submission
+* render data using jQuery
+* from the response result, retrieve the rate
+* then render the rate on html page
+*/
+function renderCurrencyData(data) {
+    const dataString = data;
+    const jsonData = JSON.parse(dataString);
+    // console.log(jsonData); // TODO: delete this before project submission
+    var rates = jsonData.rates[symbol];
+    // console.log(rates); // TODO: delete this before project submission
+    // console.log("Render function: ", symbol); // TODO: delete this before project submission
+    const text = `1 ${base} = ${rates} ${symbol}`;
+    exchangeRateEl.text(text);
+    exchangeRateEl.attr('id', 'exchange-rate');
+    currencyEl.append(exchangeRateEl);
+}
 
-    /* selecting currency data id div block from destination.html page */
-    var currencyEl = $(".currency-container");
-    /* creating the div block to display exchange rate */
-    var exchangeRateEl = $('<div>');
+/* header for the request */
+var fixerRequestHeader = new Headers();
+fixerRequestHeader.append("apikey", "QaMPdQvBv497O2H54foAV8WnMhQzurnJ");
 
-    /* 
-    * render data using jQuery
-    * from the response result, retrieve the rate
-    * then render the rate on html page
-    */
-    function renderCurrencyData(data) {
-        const dataString = data;
-        const jsonData = JSON.parse(dataString);
-        console.log(jsonData); // TODO: delete this before project submission
-        var rates = jsonData.rates[symbol];
-        console.log(rates); // TODO: delete this before project submission
-        console.log("Render function: ", symbol); // TODO: delete this before project submission
-        const text = `1 ${base} = ${rates} ${symbol}`;
-        exchangeRateEl.text(text);
-        exchangeRateEl.attr('id', 'exchange-rate');
-        currencyEl.append(exchangeRateEl);
-    }
+/* request options */
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow',
+  headers: fixerRequestHeader
+};
 
-    /* headers that will be used in sending request to the server */
-    var myHeaders = new Headers();
-    myHeaders.append("apikey", "QaMPdQvBv497O2H54foAV8WnMhQzurnJ");
+/* requesting data from the server */
+var url = `https://api.apilayer.com/fixer/${endpoint}?symbols=${symbol}&base=${base}`;
 
-    /* request options */
-    var requestOptions = {
-      method: 'GET',
-      redirect: 'follow',
-      headers: myHeaders
-    };
-
-    /* requesting data from the server */
-    var url = `https://api.apilayer.com/fixer/${endpoint}?symbols=${symbol}&base=${base}`;
-    console.log(url);
-    console.log(symbol);
-    fetch(url, requestOptions)
-      .then(response => response.text())
-      .then(result => renderCurrencyData(result))
-      .catch(error => console.log('error', error));
-      
-  });
-
-// /* the selected destination */
-// var destination = localStorage.getItem("group6-travel-app-selected-city");
-// console.log("The chosen destination: ", destination);
-
-// /* variables that need to be used to fetch data from the server */
-// var endpoint = "latest";
-// var symbol = "USD";
-// var base = "AUD";
-
-// /* 
-//  * fetching currency code of the selected city from the currency.json file 
-//  */
-// fetch('./currencies.json')
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(typeof data);
-//     symbol = data[destination];
-//     console.log(data);
-
-//     /* selecting currency data id div block from destination.html page */
-//     var currencyEl = $(".currency-container");
-//     /* creating the div block to display exchange rate */
-//     var exchangeRateEl = $('<div>');
-
-//     /* 
-//     * render data using jQuery
-//     * from the response result, retrieve the rate
-//     * then render the rate on html page
-//     */
-//     function renderCurrencyData(data) {
-//         const dataString = data;
-//         const jsonData = JSON.parse(dataString);
-//         // console.log(jsonData); // TODO: delete this before project submission
-//         var rates = jsonData.rates[symbol];
-//         console.log(rates); // TODO: delete this before project submission
-//         console.log("Render function: ", symbol); // TODO: delete this before project submission
-//         const text = `1 ${base} = ${rates} ${symbol}`;
-//         exchangeRateEl.text(text);
-//         exchangeRateEl.attr('id', 'exchange-rate');
-//         currencyEl.append(exchangeRateEl);
-//     }
-
-//     /* headers that will be used in sending request to the server */
-//     var myHeaders = new Headers();
-//     myHeaders.append("apikey", "QaMPdQvBv497O2H54foAV8WnMhQzurnJ");
-
-//     /* requesting data from the server */
-//     var requestOptions = {
-//       method: 'GET',
-//       redirect: 'follow',
-//       headers: myHeaders
-//     };
-
-//     fetch(`https://api.apilayer.com/fixer/${endpoint}?symbols=${symbol}&base=${base}`, requestOptions)
-//       .then(response => response.text())
-//       .then(result => renderCurrencyData(result))
-//       .catch(error => console.log('error', error));
-//   }); // change the currency symbol based on the selected city
+fetch(url, requestOptions)
+  .then(response => response.text())
+  .then(result => renderCurrencyData(result))
+  .catch(error => console.log('error', error));

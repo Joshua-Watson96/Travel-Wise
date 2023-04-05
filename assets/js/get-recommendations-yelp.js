@@ -1,3 +1,6 @@
+/* To retrieve the data of 10 recommended places to visit in the selected destination */
+/* Used Yelp API to get the required data */
+
 // get recommended places from Yelp
 var city = localStorage.getItem("group6-travel-app-selected-city");
 var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=" + city + "&categories=amusementparks&categories=parks&categories=museums&categories=aquariums&categories=arcades&categories=tours&categories=arts&categories=attractionfarms&sort_by=review_count&limit=10";
@@ -5,23 +8,28 @@ var apiKey = "kSEvBygo41ZOQRY3djEBiQRa71zBbcE8x6I52buCSjLkMqLdHmjg9YbM4H-WcP6dR3
 
 var businessContainer = document.getElementById('businesses');
 
-fetch(queryURL, {
-  method: 'GET', //GET is the default.
-  headers: {
-      "accept": "application/json",
-      "Access-Control-Allow-Origin":"*",
-      "Authorization": `Bearer ${apiKey}`
-      }
+/* header for the request */
+var requestHeader = {
+  "accept": "application/json",
+  "Access-Control-Allow-Origin":"*",
+  "Authorization": `Bearer ${apiKey}`
+}
 
-})
+/* request options */
+var requestOption = {
+  method: 'GET',
+  headers: requestHeader
+}
+
+/* requesting data from the server */
+fetch(queryURL, requestOption)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
     var business = data.businesses
     console.log(data.businesses);
-  //   console.log(data);
-    console.log(business.length);
+
     for (var i = 0; i < business.length; i++) {
       //define elements needed to build the business cards
       var businessCard = document.createElement('div');
