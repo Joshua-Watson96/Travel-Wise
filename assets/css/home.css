@@ -184,6 +184,12 @@ h2 {
 .city-img:hover {
   border: 0.3em solid var(--green);
 }
+
+#prev-btn,
+#next-btn {
+  display: none;
+}
+
 /* sets the properties for the footer element */
 footer {
   background-color: var(--dark);
@@ -199,37 +205,35 @@ footer {
   }
 
 /* sets the properties for the city card id */
+
+.top-cities{
+  min-height: 22em;
+}
 .city-cards {
   display: block;
   transition: 0.3s;
   text-align: center;
   width: 100%;
-  /* position: relative; */
 
 }
 /* sets the properties for the card id */
   .card {
-    width: 60%;
-    /* position: absolute;
-    transition: all 0.5s; */
+    width: 80%;
   }
-}
 
-
-  
   /* sets the properties for the buttons on the carousel */
   #prev-btn,
   #next-btn {
     display: block;
     position: absolute;
     width: auto;
-    margin-top: 4em;
-    padding: 0.6em;
+    margin-top: 3em;
+    padding: 0.5em;
     background-color: whitesmoke;
     color: var(--green);
     font-size: 1.5em;
     user-select: none;
-    border-radius: 40%;
+    border-radius: 50%;
     border: 0.1em solid #053138;
   }
 /* sets the placement of the next-btn class */
@@ -252,29 +256,34 @@ footer {
     color: whitesmoke;
     cursor: pointer;
   }
-  /*makes the page responsive */
-@media (min-width: 768px) {
-  .submit-search {
-    margin: auto;
-    width: 50%;
-  }
-
-/* sets the properties for the city-cards class */
-.city-cards {
-  display: block;
-  transition: 0.3s;
-  text-align: center;
-  width: 100%;
-  /* position: relative; */
-
 }
-/* sets the properties for the card clas */
+  /*makes the page responsive */
+@media (min-width: 992px) {
+
+/* sets the properties for the card class */
   .card {
     width: 80%;
-    /* position: absolute;
-    transition: all 0.5s; */
   }
-
+  .city-img {
+    height: 22em;
+  }
+  .text-overlay {
+    margin-top: 11.2em;
+    padding: 0.4em 2.5em;
+    font-size: 1.5em;
+  }
+  #prev-btn,
+  #next-btn {
+    margin-top: 5.8em;
+  }
+   /* sets the placement of the next-btn class */
+   #next-btn {
+    right: 4em;
+  }
+  /* sets the placement of the prev-btn class */
+  #prev-btn {
+    left: 4em;
+  }
 }
 
 @media (min-width: 1600px) {
@@ -282,18 +291,15 @@ footer {
   .city-img {
     height: 30em;
   }
-
   .text-overlay {
     margin-top: 14em;
     padding: 0.4em 2.5em;
     font-size: 1.7em;
   }
-
   #prev-btn,
   #next-btn {
     margin-top: 9em;
   }
-
    /* sets the placement of the next-btn class */
    #next-btn {
     right: 6.5em;
