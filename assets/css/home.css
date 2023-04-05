@@ -22,14 +22,13 @@ body {
 /* sets the colour for .fa-plus */
 .fa-plus {
   color: var(--dark);
-  font-size: larger;
 }
 
 /* sets the properties for the sidebar id */
 .sidebar {
   margin-top: 0.5em;
   width: 0;
-  height: 9%;
+  height: 10%;
   background-color: whitesmoke;
   border: 0.05em solid var(--dark);
   transition: 1s ease;
@@ -48,14 +47,16 @@ body {
   color: var(--green);
   border: none;
   border-radius: 1em;
+  transition-delay: 0.2s;
+  transition: 0.6s;
 }
 
 /* sets the cursor when hovering over the link button */
 .button-link-visible {
-    background-color: var(--dark);
-    cursor: pointer;
-    width: 10em;
-    height: 2em;
+  background-color: var(--dark);
+  cursor: pointer;
+  width: 10em;
+  height: 2em;
 }
 
 .button-link-visible:hover {
@@ -69,17 +70,16 @@ body {
 }
 /* sets the properties for the side-btn class */
 
-
 #side-btn {
   position: absolute;
   border: none;
-  height: 60px;
-  width: 60px;
+  height: 80px;
+  width: 80px;
   border: 0.4em solid var(--green);
   border-radius: 50%;
   box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.3);
   left: 100%;
-  top: 1rem;
+  top: 0.6em;
   transform: translateX(-50%);
   cursor: pointer;
 }
@@ -121,7 +121,7 @@ header {
   box-shadow: 1px 2px 10px #847f26;
 }
 /* sets the properties for the submit class */
-#submit{
+#submit {
   background-color: var(--light);
   padding: 0.3em 2em;
   border: 0.05em solid var(--dark);
@@ -204,19 +204,18 @@ footer {
     width: 50%;
   }
 
-/* sets the properties for the city card id */
+  /* sets the properties for the city card id */
 
-.top-cities{
-  min-height: 22em;
-}
-.city-cards {
-  display: block;
-  transition: 0.3s;
-  text-align: center;
-  width: 100%;
-
-}
-/* sets the properties for the card id */
+  .top-cities {
+    min-height: 22em;
+  }
+  .city-cards {
+    display: block;
+    transition: 0.3s;
+    text-align: center;
+    width: 100%;
+  }
+  /* sets the properties for the card id */
   .card {
     width: 80%;
   }
@@ -236,31 +235,30 @@ footer {
     border-radius: 50%;
     border: 0.1em solid #053138;
   }
-/* sets the placement of the next-btn class */
+  /* sets the placement of the next-btn class */
   #next-btn {
     right: 2.8em;
   }
-/* sets the placement of the prev-btn class */
+  /* sets the placement of the prev-btn class */
   #prev-btn {
     left: 2.8em;
   }
-/* sets what happens when the user hovers over the next button */
+  /* sets what happens when the user hovers over the next button */
   #next-btn:hover {
     background-color: var(--dark);
     color: whitesmoke;
     cursor: pointer;
   }
-/* sets what happens when the user hovers over the prev button */
+  /* sets what happens when the user hovers over the prev button */
   #prev-btn:hover {
     background-color: var(--dark);
     color: whitesmoke;
     cursor: pointer;
   }
 }
-  /*makes the page responsive */
+/*makes the page responsive */
 @media (min-width: 992px) {
-
-/* sets the properties for the card class */
+  /* sets the properties for the card class */
   .card {
     width: 80%;
   }
@@ -276,8 +274,8 @@ footer {
   #next-btn {
     margin-top: 5.8em;
   }
-   /* sets the placement of the next-btn class */
-   #next-btn {
+  /* sets the placement of the next-btn class */
+  #next-btn {
     right: 4em;
   }
   /* sets the placement of the prev-btn class */
@@ -287,7 +285,6 @@ footer {
 }
 
 @media (min-width: 1600px) {
-
   .city-img {
     height: 30em;
   }
@@ -300,8 +297,8 @@ footer {
   #next-btn {
     margin-top: 9em;
   }
-   /* sets the placement of the next-btn class */
-   #next-btn {
+  /* sets the placement of the next-btn class */
+  #next-btn {
     right: 6.5em;
   }
   /* sets the placement of the prev-btn class */

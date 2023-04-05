@@ -17,10 +17,9 @@ body {
 }
 /* sets the properties for the sidebar class */
 .sidebar {
-  text-align: center;
-  margin-top: 0.5em;
+  margin-top: 0.7em;
   width: 0;
-  height: 15%;
+  height: 17%;
   background-color: whitesmoke;
   border: 0.05em solid var(--dark);
   transition: 1s ease;
@@ -43,6 +42,8 @@ body {
   color: var(--green);
   border: none;
   border-radius: 1em;
+  transition-delay: 0.2s;
+  transition: 0.6s;
 }
 
 /* sets the cursor when hovering over the link button */
@@ -79,13 +80,13 @@ body {
 #side-btn {
   position: absolute;
   border: none;
-  height: 60px;
-  width: 60px;
+  height: 80px;
+  width: 80px;
   border: 0.4em solid var(--green);
   border-radius: 50%;
   box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.3);
   left: 100%;
-  top: 1.8rem;
+  top: 1.6rem;
   transform: translateX(-50%);
   cursor: pointer;
 }
@@ -106,6 +107,8 @@ header {
 .fa-plane {
   color: var(--green);
 }
+
+
 /* sets the properties for the destination name container */
 .destination-name-container {
   background-color: var(--light);
@@ -123,23 +126,14 @@ header {
 /* sets the text in the desination container to center */
 .destination-content-container {
   text-align: center;
-}
-/* sets the display for the city map class */
-.city-map {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* to style destination map section */
-.city-map-container {
-    display: flex;
-    justify-content: center;
-}
 /* sets the size and border of the city map id */
 #map {
   height: 15em;
-  width: 100%;
-  margin: 0 1em 1em 1em;
+  margin: 0 1em 0.5em 1em;
   border: 0.2em solid var(--dark);
   box-shadow: 0px 0px 30px #a6a5a5;
 }
@@ -156,19 +150,63 @@ header {
 #description {
   text-align: justify;
   padding: 0.4em;
+  width: 100%;
 }
+
+.small-cards {
+  display: flex;
+  margin: 1em;
+}
+
+.city-time {
+  margin: 1em 0;
+  margin-right: 0.2em;
+  width: 10em;
+  flex: 1 1 5em;
+  height: 9em;
+  background-color: var(--green);
+  color: var(--dark);
+  box-shadow: 0px 0px 20px #737373;
+}
+
+.city-time h3 {
+  text-align: center;
+  font-size: 1.4em;
+  color: var(--dark);
+  margin-top: 0.2em;
+  text-decoration: underline;
+}
+
+#timeZone {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+
 /* sets the properties for the currency block */
 .currency-block {
-  margin: 1em;
-  background-color: var(--green);
+  margin: 1em 0;
+  width: 10em;
+  margin-left: 0.2em;
+  flex: 1 1 5em;
+  height: 9em;
+  background-color: var(--dark);
   box-shadow: 0px 0px 20px #737373;
 }
 /* sets the text size for the h3 in the currency container */
 #currency-data h3 {
   text-align: center;
-  font-size: 1.5em;
-  color: var(--dark);
+  font-size: 1.4em;
+  color: whitesmoke;
+  margin-top: 0.2em;
+  text-decoration: underline;
 }
+
+.currency-container {
+  font-size: 1.5em;
+  text-align: center;
+}
+
 /* sets the properties for the weather block */
 .weather-block {
   margin: 1em;
@@ -189,7 +227,7 @@ header {
   flex: 1 1 2%;
   flex-wrap: wrap;
   display: inline-block;
-  width: 20em;
+  width: 30em;
   margin: 0.3em;
   border: 0.2em solid var(--dark);
   padding-bottom: 1em;
@@ -296,6 +334,7 @@ header {
 footer {
   background-color: var(--dark);
   height: 3em;
+  width: 100%;
   text-align: center;
   color: var(--light);
 }
@@ -305,11 +344,12 @@ footer {
     height: 30em;
     width: 20em;
   }
+
 }
 /* makes the website responsive */
 @media (min-width: 992px) {
   .businessCard {
-    height: 28em;
+    height: 30em;
     width: 14em;
   }
 
@@ -318,4 +358,6 @@ footer {
     height: 11em;
     margin: auto;
   }
-}
+ 
+  }
+  
