@@ -146,9 +146,10 @@ h2 {
 }
 /* sets the properties for the top-cities id */
 .top-cities {
-  margin: 2em 0.3em;
+  margin: 2em 1.5em 5em 1.5em;
   background-color: var(--light);
   padding-bottom: 0.2em;
+  min-height: 30em;
   box-shadow: 3px 3px 20px #888888;
 }
 /* sets slide arrow id display to none */
@@ -222,22 +223,22 @@ footer {
     display: block;
     position: absolute;
     width: auto;
-    margin-top: 1em;
+    margin-top: 4em;
     padding: 0.6em;
     background-color: whitesmoke;
     color: var(--green);
     font-size: 1.5em;
     user-select: none;
-    border-radius: 50%;
+    border-radius: 40%;
     border: 0.1em solid #053138;
   }
 /* sets the placement of the next-btn class */
   #next-btn {
-    right: 2em;
+    right: 2.8em;
   }
 /* sets the placement of the prev-btn class */
   #prev-btn {
-    left: 2em;
+    left: 2.8em;
   }
 /* sets what happens when the user hovers over the next button */
   #next-btn:hover {
@@ -269,9 +270,36 @@ footer {
 }
 /* sets the properties for the card clas */
   .card {
-    width: 60%;
+    width: 80%;
     /* position: absolute;
     transition: all 0.5s; */
   }
 
+}
+
+@media (min-width: 1600px) {
+
+  .city-img {
+    height: 30em;
+  }
+
+  .text-overlay {
+    margin-top: 14em;
+    padding: 0.4em 2.5em;
+    font-size: 1.7em;
+  }
+
+  #prev-btn,
+  #next-btn {
+    margin-top: 9em;
+  }
+
+   /* sets the placement of the next-btn class */
+   #next-btn {
+    right: 6.5em;
+  }
+  /* sets the placement of the prev-btn class */
+  #prev-btn {
+    left: 6.5em;
+  }
 }
