@@ -7,6 +7,7 @@ var bucketListlink = document.querySelector("#bucket-link")
 // adds on click function to the sidebar button
 document.querySelector("#side-btn").onclick = function () {
   sidebar.classList.toggle("sidebar-large");
+  bucketListlink.classList.toggle("button-link-visible");
   var sidebarWidth1 = document.querySelector(".sidebar-large")
   // console.log(sidebarWidth1)
   if (sidebarWidth1 === null) {
