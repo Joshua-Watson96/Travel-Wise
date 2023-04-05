@@ -6,6 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Links all the css stylesheets and fonts to the HTML -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="./assets/css/bucketlist.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,30 +20,41 @@
     <title>My Bucket List</title>
   </head>
   <body>
+
+    <div class="side-container">
+      <div class="sidebar">
+      <button class="button-link" id="goBack"></button>
+        <button id="side-btn">
+          <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+        </button>
+      </div> 
+    </div>
+
     <header>
+      <!-- Website name -->
       <h1>
         Travel Wise
         <i class="fa fa-plane" aria-hidden="true"></i>
       </h1>
     </header>
-
+      <!-- Container for search bar/button -->
     <div class="container">
       <div class="ui-widget submit-search">
         <label for="myCity"></label>
         <input id="myCity" placeholder="Search for a City" />
         <button id="submit" type="button">Search</button>
       </div>
-
+      <!-- Title for the bucket list-->
       <section id="bucket-list-container">
         <h2>My Bucket List</h2>
         <ul id="bucket-list"></ul>
       </section>
     </div>
 
-
+    <!-- Page footer -->
     <footer>Travel Wise 2023</footer>
 
-
+    <!-- All the scripts linked and used in bucketlist.html-->
     <script src="./assets/js/bucket-list.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>

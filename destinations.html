@@ -26,7 +26,7 @@
     <title>Travel Wise</title>
   </head>
   <body>
-
+    <!-- div for side bar-->
       <div class="side-container">
         <div class="sidebar">
           <button class="button-link" id="goBack"></button>
@@ -55,19 +55,23 @@
         <div class="destination-name-container">
           <h2 class="destination-name"></h2>
         </div>
+
         <!-- div for city map -->
         <div class="city-map" onload="initmap()">
           <div id="map"></div>
         </div>
+
         <!-- div for city description-->
         <div class="city-description">
           <div id="description"></div>
         </div>
+        
         <!-- div for city time-->
         <div class="city-time">
           <div id="timeZone"></div>
         </div>
-
+        
+      <!-- div for currency-->
       <div class="currency-block currency-card" id="currency-data">
         <div class="currency-container">
           <h3>Currency</h3>
@@ -85,22 +89,23 @@
         <div id="businesses"></div>
     </div>
     
-
+    <!-- button for adding to bucket list-->
       <button id="bucketlist-btn">
         Add to my Bucket List <i class="fa fa-plane" aria-hidden="true"></i>
       </button>
     </div>
 
-
+    <!-- div for dialog box; failed to add to bucket list-->
     <div id="dialog-fail" title="Error: Already exists.">
       <p>The city already exist in your bucket list.</p>
     </div>
 
+    <!-- div for dialog box; Succesfully added to bucket list-->
     <div id="dialog-success" title="Successfully added.">
-
-      <p>The city has been added to your bucket list.</p>
+    <p>The city has been added to your bucket list.</p>
     </div>
 
+    <!-- destinations html footer-->
     <footer>Travel Wise 2023</footer>
 
     <!-- linking javascript files to html -->

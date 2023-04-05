@@ -96,31 +96,36 @@ fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/`+ city)
 
 
 // when clicked, the sidebar will change to the 'sidebar_large' styling
+// variables for the sidebar
 var sidebar = document.querySelector(".sidebar");
 var sideContainer = document.querySelector(".side-container")
 var sidebarWidth
 var bucketListlink = document.querySelector("#bucket-link")
 var goBacklink = document.querySelector("#goBack")
 
-
+// creates on click function for the sidebar button
 document.querySelector("#side-btn").onclick = function () {
   sidebar.classList.toggle("sidebar-large");
+  bucketListlink.classList.toggle("button-link-visible");
+  goBacklink.classList.toggle("button-link-visible");
   var sidebarWidth1 = document.querySelector(".sidebar-large")
 
   if (sidebarWidth1 === null) {
     bucketListlink.textContent = ""
     goBacklink.textContent = ""
+
   } else {
     bucketListlink.textContent = "Your bucket list"
     goBacklink.textContent = "Back to Home"
+
   }
 
 };
-
+// creates onclick function for the bucket list button; shows bucketlist.html
 bucketListlink.onclick= function () {
   window.location.href = 'bucketlist.html'
 }
-
+// creates onclick function for the Go back button; shows index.html (home page)
 goBacklink.onclick= function () {
   window.location.href = 'index.html'
 }

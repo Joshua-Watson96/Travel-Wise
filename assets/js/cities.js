@@ -1,3 +1,4 @@
+// creates function and variable for all of the cities in the website
 $( function() {
   var cities = [
     'Shanghai',
