@@ -8,68 +8,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
-      rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Sofia" />
-    <link
-      rel="stylesheet"
-      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
     <link rel="stylesheet" href="./assets/css/destination.css" />
-    <!-- <link rel="stylesheet" href="./assets/css/style.css" /> -->
-    <link rel="stylesheet" href="./assets/css/currency.css" />
     <title>Travel Wise</title>
   </head>
   <body>
-    <!-- div for side bar-->
-      <div class="side-container">
-        <div class="sidebar">
-          <button class="button-link" id="goBack"></button>
-          <button class="button-link" id="bucket-link"></button>
-          <button id="side-btn">
-            <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-          </button>
-        </div>
+    <!-- Side bar -->
+    <div class="side-container">
+      <div class="sidebar">
+        <button class="button-link" id="goBack"></button>
+        <button class="button-link" id="bucket-link"></button>
+        <button id="side-btn">
+          <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+        </button>
       </div>
+    </div>
 
-      <!-- Website name -->
-      <div class="main-content">
-        <header>
-          <h1>
-            Travel Wise
-            <i class="fa fa-plane" aria-hidden="true"></i>
-          </h1>
-        </header>
-      </div>
+    <!-- Name of the travel website  -->
+    <div class="website-name">
+      <header>
+        <h1>
+          Travel Wise
+          <i class="fa fa-plane" aria-hidden="true"></i>
+        </h1>
+      </header>
+    </div>
 
     <!-- All the main content that will be displayed on the destinations.html page is in this container -->
-    <div class="destination-container">
+    <div class="destination-content-container">
       <!-- Name of the city -->
-      <div>
-        <!-- div for the name of the city -->
-        <div class="destination-name-container">
-          <h2 class="destination-name"></h2>
-        </div>
+      <section class="destination-name-container">
+        <h2 class="destination-name"></h2>
+      </section>
 
-        <!-- div for city map -->
-        <div class="city-map" onload="initmap()">
-          <div id="map"></div>
-        </div>
+      <!-- div for city time-->
+      <div class="city-time">
+        <div id="timeZone"></div>
+      </div>
 
-        <!-- div for city description-->
-        <div class="city-description">
-          <div id="description"></div>
-        </div>
-        
-        <!-- div for city time-->
-        <div class="city-time">
-          <div id="timeZone"></div>
-        </div>
+      <!-- Map of the city -->
+      <div class="city-map" onload="initmap()">
+        <div id="map"></div>
+      </div>
+
+      <!-- div for city description-->
+      <div class="city-description">
+        <div id="description"></div>
+      </div>
         
       <!-- div for currency-->
       <div class="currency-block currency-card" id="currency-data">
@@ -87,9 +75,9 @@
       <div id="businesses-container">
         <h3>Yelp Recommendations</h3>
         <div id="businesses"></div>
-    </div>
+      </div>
     
-    <!-- button for adding to bucket list-->
+      <!-- button for adding to bucket list-->
       <button id="bucketlist-btn">
         Add to my Bucket List <i class="fa fa-plane" aria-hidden="true"></i>
       </button>
