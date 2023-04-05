@@ -24,7 +24,7 @@ body {
   color: var(--dark);
 }
 
-/* sets the properties for the sidebar id */
+/* sets the properties for the sidebar class */
 .sidebar {
   margin-top: 0.5em;
   width: 0;
