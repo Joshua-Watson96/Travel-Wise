@@ -113,19 +113,22 @@ homeBtn.addEventListener("click", function () {
 
 // when clicked, the sidebar will change to the 'sidebar_large' styling
 var sidebar = document.querySelector(".sidebar");
-var sideContainer = document.querySelector(".side-container");
-var sidebarWidth;
-var goBacklink = document.querySelector("#goBack");
+var sideContainer = document.querySelector(".side-container")
+var sidebarWidth
+var goBacklink = document.querySelector("#goBack")
 
+// adds on click function to the sidebar button
 document.querySelector("#side-btn").onclick = function () {
   sidebar.classList.toggle("sidebar-large");
-  var sidebarWidth1 = document.querySelector(".sidebar-large");
-
+  goBacklink.classList.toggle("button-link-visible");
+  var sidebarWidth1 = document.querySelector(".sidebar-large")
+  // console.log(sidebarWidth1)
   if (sidebarWidth1 === null) {
-    goBacklink.textContent = "";
+    goBacklink.textContent = ""
   } else {
-    goBacklink.textContent = "Back to Home";
+    goBacklink.textContent = "Back to Home"
   }
+
 };
 
 

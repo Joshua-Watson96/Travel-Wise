@@ -30,27 +30,35 @@ body {
 }
 /* sets the properties for the side bar size */
 .sidebar-large {
-  width: 15%;
+  width: 17em;
 }
 /* sets the properties for the link button */
 .button-link {
   font-family: "Kanit", sans-serif;
   font-size: 1.2em;
-  width: 10em;
-  height: 2em;
+  width: 0;
+  height: 0;
   margin-bottom: 0.5em;
   margin-left: 0.5em;
-  background-color: var(--dark);
   color: var(--green);
   border: none;
   border-radius: 1em;
 }
 
 /* sets the cursor when hovering over the link button */
-.button-link:hover {
-    background-color: var(--light);
+.button-link-visible {
+    background-color: var(--dark);
     cursor: pointer;
+    width: 10em;
+    height: 2em;
 }
+
+.button-link-visible:hover {
+  background-color: var(--light);
+  cursor: pointer;
+}
+
+
 /* sets the text to center in the destination container */
 .destination-container {
     text-align: center;
