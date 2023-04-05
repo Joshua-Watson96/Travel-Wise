@@ -73,8 +73,15 @@ bucketList.addEventListener("click", function (event) {
 
   // Checks if element is a remove button
   if (element.matches("button") === true) {
-    console.log("it matches the remove button");
-    var index = element.parentElement.getAttribute("data-index");
+    // console.log("it matches the remove button");
+
+    // console.log(element)
+    var cityToremove = element.previousSibling.text
+    // console.log(cityToremove)
+
+    var index = cities.indexOf(cityToremove)
+
+
     cities.splice(index, 1);
 
     localStorage.setItem("group6-bucket-list-cities", JSON.stringify(cities));
