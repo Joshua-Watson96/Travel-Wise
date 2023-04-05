@@ -82,7 +82,7 @@ bucketList.addEventListener("click", function(event) {
     var cityTosave = element.text
     // console.log("link is clicked", cityTosave)
 
-    localStorage.setItem("group6-travel-app-selected-city", cityTosave);
+    localStorage.setItem("userSelectedCity", cityTosave);
   }
 
 });

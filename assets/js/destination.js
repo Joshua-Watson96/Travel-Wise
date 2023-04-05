@@ -1,5 +1,5 @@
 // Sets the variables for destination.js
-var city = localStorage.getItem("group6-travel-app-selected-city");
+var city = localStorage.getItem("userSelectedCity");
 console.log(city)
 var google = {};
 var Lat, Lng;

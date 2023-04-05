@@ -5,6 +5,7 @@
 // sBkWGidcvvz1zCSDEmsTtV9vXxdD1Nvr
 // SlevtC27eE76f6urUpqiJisdHBEjYRXC
 // QaMPdQvBv497O2H54foAV8WnMhQzurnJ
+// jfuosGoy8iVo05vjAEZURsKhYyYP6lvh
 
 /* to store key value pair of cities and its currencies  */
 var citiesCurrencies = 
@@ -87,15 +88,14 @@ var citiesCurrencies =
   "Guadalajara": "MXN"
 }
 
-/* the selected destination */
-var destinatedCity = localStorage.getItem("group6-travel-app-selected-city");
+/* the selected destination by the user */
+var destinatedCity = localStorage.getItem("userSelectedCity");
 console.log("The chosen destination: ", destinatedCity);
 
 /* variables that need to be used to fetch data from the server */
 var endpoint = "latest";
 var symbol = "USD";
 var base = "AUD";
-
 
 /* the currency code of the selected destination */
 var symbol = citiesCurrencies[destinatedCity];
@@ -124,7 +124,7 @@ function renderCurrencyData(data) {
 
 /* header for the request */
 var fixerRequestHeader = new Headers();
-fixerRequestHeader.append("apikey", "QaMPdQvBv497O2H54foAV8WnMhQzurnJ");
+fixerRequestHeader.append("apikey", "jfuosGoy8iVo05vjAEZURsKhYyYP6lvh");
 
 /* request options */
 var requestOptions = {
