@@ -7,6 +7,7 @@
 // QaMPdQvBv497O2H54foAV8WnMhQzurnJ
 // jfuosGoy8iVo05vjAEZURsKhYyYP6lvh
 // 9uOvRX8iS0Fegq3opZyi87ZWXRyj3vTr
+// 5qrVWFzMGJQw43t4W1EbXhgawiJF95SM
 
 /* to store key value pair of cities and its currencies  */
 var citiesCurrencies = 
@@ -125,7 +126,7 @@ function renderCurrencyData(data) {
 
 /* header for the request */
 var fixerRequestHeader = new Headers();
-fixerRequestHeader.append("apikey", "jfuosGoy8iVo05vjAEZURsKhYyYP6lvh");
+fixerRequestHeader.append("apikey", "5qrVWFzMGJQw43t4W1EbXhgawiJF95SM");
 
 /* request options */
 var requestOptions = {
