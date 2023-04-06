@@ -6,7 +6,7 @@ e.g; A Map of the city, Local time, Short description, Local currency and the ex
 To run the Yelp API (recommendations), please click and run this link prior to opening deployed site
      --------> https://cors-anywhere.herokuapp.com/corsdemo 
 
-Deployed Site:
+Deployed Site: https://joshua-watson96.github.io/Travel-Wise/index.html 
 
 Screenshots:
 
