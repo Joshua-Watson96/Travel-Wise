@@ -41,7 +41,7 @@ geocoder.geocode({
 };
 
 
-// variable for the local time 
+// Variable for the local time 
 var timeZone = document.getElementById("timeZone")
 // Function to get the local time
 function updateTime(){
