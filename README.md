@@ -1,22 +1,26 @@
 # Travel Website
 
-A website for travelers to look for the relevant information about the destinations to help them make decisions on their travel plans.
+A website for travelers to look for relevant information about destinations to help them with their travel plans.
+e.g; A Map of the city, Local time, Short description, Local currency and the exchange rate from 1AUD, Weather forecast, and the top10 recommendations for that city.
 
 To run the Yelp API (recommendations), please click and run this link prior to opening deployed site
-                --------> https://cors-anywhere.herokuapp.com/corsdemo <--------
+     --------> https://cors-anywhere.herokuapp.com/corsdemo 
 
 Deployed Site:
 
 Screenshots:
 
 Home Page
-![alt]()
+![alt](./assets/images/HomePage.png)
 
 Destinations Page
-![alt]()
+![alt](./assets/images/DestinationPage.png)
+
+Destinations Page showing the side bar
+![alt](./assets/images/SidebarShowing.png)
 
 Bucket List Page
-![alt]()
+![alt](./assets/images/BucketListPage.png)
 
 
 API's used:
