@@ -1,3 +1,4 @@
+// sets the variables for bucket-list.js
 var cities = [];
 var visitedCities =[];
 var bucketList = document.querySelector("#bucket-list");

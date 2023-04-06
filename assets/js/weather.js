@@ -1,18 +1,10 @@
-
-// var sidebar = document.querySelector(".sidebar");
-
-
-// document.querySelector("side-btn").onclick = function () {
-//   sidebar.classList.toggle("sidebar-large");
-// };
-
-
+// sets  the local storage variable
 var city = localStorage.getItem("userSelectedCity");
 
 /* to get the latitude and longtitude of the city  */
 var getCoords = function (city) {
   var geoUrl =
-      "http://api.openweathermap.org/geo/1.0/direct?q=" +
+      "https://api.openweathermap.org/geo/1.0/direct?q=" +
       city +
       "&limit=5&appid=998c310a82d62a4fbd406adc6cf4d96f";
 
@@ -40,7 +32,7 @@ getCoords(city);
   /* getForecast will use the coordinates from the getCoord function */
   var getForecast = function (latitude, longitude) {
     var weatherUrl =
-      "http://api.openweathermap.org/data/2.5/forecast?lat=" +
+      "https://api.openweathermap.org/data/2.5/forecast?lat=" +
       latitude +
       "&lon=" +
       longitude +
@@ -110,6 +102,4 @@ getCoords(city);
     })  
   }
   
-  
-//  searchForm.addEventListener("submit", searchSubmit);
   

@@ -123,11 +123,7 @@ prev.addEventListener("click", function (event) {
   event.stopPropagation();
   navigate(-1);
 
-  // currentSlide-
-  // slides.forEach((slide, index) => {
-  // carousel.innerHTML = slide[index]
-  
-// });
+
 });
 
 
