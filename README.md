@@ -27,7 +27,9 @@ Google API (Map,local Time)
 Wikipedia API (Description of city)
 
 OpenWeather API References:
-https://openweathermap.org/api
+https://openweathermap.org/forecast5
+https://openweathermap.org/api/geocoding-api 
+https://openweathermap.org/weather-conditions 
 
 
 Fixer API References:
