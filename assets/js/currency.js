@@ -7,6 +7,7 @@
 // QaMPdQvBv497O2H54foAV8WnMhQzurnJ
 // jfuosGoy8iVo05vjAEZURsKhYyYP6lvh
 // 9uOvRX8iS0Fegq3opZyi87ZWXRyj3vTr
+// 5qrVWFzMGJQw43t4W1EbXhgawiJF95SM
 
 /* to store key value pair of cities and its currencies  */
 var citiesCurrencies = 
@@ -91,7 +92,6 @@ var citiesCurrencies =
 
 /* the selected destination by the user */
 var destinatedCity = localStorage.getItem("userSelectedCity");
-console.log("The chosen destination: ", destinatedCity);
 
 /* variables that need to be used to fetch data from the server */
 var endpoint = "latest";
@@ -113,10 +113,7 @@ var exchangeRateEl = $('<div>');
 function renderCurrencyData(data) {
     const dataString = data;
     const jsonData = JSON.parse(dataString);
-    // console.log(jsonData); // TODO: delete this before project submission
     var rates = jsonData.rates[symbol];
-    // console.log(rates); // TODO: delete this before project submission
-    // console.log("Render function: ", symbol); // TODO: delete this before project submission
     const text = `1 ${base} = ${rates} ${symbol}`;
     exchangeRateEl.text(text);
     exchangeRateEl.attr('id', 'exchange-rate');
@@ -125,7 +122,7 @@ function renderCurrencyData(data) {
 
 /* header for the request */
 var fixerRequestHeader = new Headers();
-fixerRequestHeader.append("apikey", "jfuosGoy8iVo05vjAEZURsKhYyYP6lvh");
+fixerRequestHeader.append("apikey", "5qrVWFzMGJQw43t4W1EbXhgawiJF95SM");
 
 /* request options */
 var requestOptions = {

@@ -38,8 +38,6 @@ fetch(queryURL, requestOption)
 
 
   addTolistBtn.addEventListener("click", function(event) {
-    console.log("add is clicked")
-
     var bucketCities = [];
     var citiesBucketlist =  JSON.parse(localStorage.getItem("group6-bucket-list-cities"));
     var cityTosave = localStorage.getItem("userSelectedCity")
@@ -73,8 +71,6 @@ fetch(queryURL, requestOption)
 */
 function renderRecommendationsData(data) {
     var business = data.businesses;
-    console.log(data.businesses);
-
     for (var i = 0; i < business.length; i++) {
       //define elements needed to build the business cards
       var businessCard = document.createElement('div');

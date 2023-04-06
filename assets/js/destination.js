@@ -1,6 +1,5 @@
 // Sets the variables for destination.js
 var city = localStorage.getItem("userSelectedCity");
-console.log(city)
 var google = {};
 var Lat, Lng;
 
@@ -12,7 +11,6 @@ geocoder.geocode({
   // makes the address the selected city from the search bar
   'address': city
 }, async function(results, status) {
-  console.log(results)
   // implements the Google Geocoder
   if (status == google.maps.GeocoderStatus.OK) {
     // variables for latitude and longitude
@@ -23,7 +21,6 @@ geocoder.geocode({
       zoom: 11,
       center: new google.maps.LatLng(Lat, Lng)
     };
-    console.log(Lat, Lng)
       // Create a new map centered on a specific location
   var  myMap = await new google.maps.Map(document.getElementById('map'), {
     center: {lat: Lat, lng: Lng},
@@ -79,8 +76,6 @@ fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/`+ city)
     const description = data.extract;
     // returns the description of the city in the HTML ID
     descriptionText.textContent += description
-
-    console.log(description); 
   })
   .catch(error => {
     console.error(error);
@@ -93,11 +88,6 @@ fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/`+ city)
     window.location.href="index.html"
   
   });
-
-
-
-
-
 
 // when clicked, the sidebar will change to the 'sidebar_large' styling
 // variables for the sidebar
