@@ -1,4 +1,5 @@
 var cities = [];
+var visitedCities =[];
 var bucketList = document.querySelector("#bucket-list");
 
 // This function is being called below and will run when the page loads. This will get the city history from local storage
@@ -8,14 +9,18 @@ function init() {
   );
   console.log(savedCities);
 
-  // var check = localStorage.getItem("checkbox");
-  // if (check.checked == true) {
-  //   checkBox.setAttribute("checkbox", true);
-  // }
 
   // If cities are found in the history were retrieved from localStorage
   if (savedCities !== null) {
     cities = savedCities;
+  }
+
+  var savedVisitedcities = JSON.parse(
+    localStorage.getItem("visited-cities")
+  )
+
+  if (savedVisitedcities !== null) {
+    visitedCities = savedVisitedcities;
   }
 
   // Display city search history
@@ -58,14 +63,23 @@ function displaySavedcities() {
 
     bucketList.appendChild(divCity);
 
+    if (visitedCities.includes(city) == true) {
+      checkBox.checked = true;
+    }
+
     checkBox.addEventListener("change", function () {
       if (this.checked) {
         console.log("Checkbox is checked..");
-        localStorage.setItem(city, true);
+        visitedCities.push(this.nextSibling.text);
+        localStorage.setItem("visited-cities", JSON.stringify(visitedCities));
       } 
     });
+
   }
 }
+
+
+
 
 //this will remove the city from local storage when the user clicks remove
 bucketList.addEventListener("click", function (event) {
@@ -73,8 +87,15 @@ bucketList.addEventListener("click", function (event) {
 
   // Checks if element is a remove button
   if (element.matches("button") === true) {
-    console.log("it matches the remove button");
-    var index = element.parentElement.getAttribute("data-index");
+    // console.log("it matches the remove button");
+
+    // console.log(element)
+    var cityToremove = element.previousSibling.text
+    // console.log(cityToremove)
+
+    var index = cities.indexOf(cityToremove)
+
+
     cities.splice(index, 1);
 
     localStorage.setItem("group6-bucket-list-cities", JSON.stringify(cities));
