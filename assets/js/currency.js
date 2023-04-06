@@ -92,7 +92,6 @@ var citiesCurrencies =
 
 /* the selected destination by the user */
 var destinatedCity = localStorage.getItem("userSelectedCity");
-console.log("The chosen destination: ", destinatedCity);
 
 /* variables that need to be used to fetch data from the server */
 var endpoint = "latest";
@@ -114,10 +113,7 @@ var exchangeRateEl = $('<div>');
 function renderCurrencyData(data) {
     const dataString = data;
     const jsonData = JSON.parse(dataString);
-    // console.log(jsonData); // TODO: delete this before project submission
     var rates = jsonData.rates[symbol];
-    // console.log(rates); // TODO: delete this before project submission
-    // console.log("Render function: ", symbol); // TODO: delete this before project submission
     const text = `1 ${base} = ${rates} ${symbol}`;
     exchangeRateEl.text(text);
     exchangeRateEl.attr('id', 'exchange-rate');
